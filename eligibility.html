@@ -1506,7 +1506,25 @@
                     </div>
                     <div class="form-group">
                         <label>Monthly Income (UGX) <span class="required">*</span></label>
-                        <input type="number" id="monthlyIncome" placeholder="e.g., 1500000" required>
+                        <div class="income-display">
+    UGX <span id="incomeValue">500,000</span>
+</div>
+
+<input 
+    type="range"
+    id="monthlyIncome"
+    min="100000"
+    max="5000000"
+    step="50000"
+    value="500000"
+    class="income-slider"
+    required
+>
+
+<div class="income-limits">
+    <span>100,000</span>
+    <span>5,000,000</span>
+</div>
                         <div class="field-error" id="monthlyIncomeError">Please enter your monthly income</div>
                     </div>
                 </div>
@@ -2431,6 +2449,20 @@ Licensed by Bank of Uganda
             
             showNextItem();
         }
+ const incomeSlider = document.getElementById("monthlyIncome");
+const incomeValue = document.getElementById("incomeValue");
+
+function formatUGX(num) {
+    return Number(num).toLocaleString();
+}
+
+if (incomeSlider && incomeValue) {
+    incomeValue.textContent = formatUGX(incomeSlider.value);
+
+    incomeSlider.addEventListener("input", function () {
+        incomeValue.textContent = formatUGX(this.value);
+    });
+}
     </script>
 </body>
 </html>
