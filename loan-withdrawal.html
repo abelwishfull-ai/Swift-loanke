@@ -1,5 +1,1385 @@
 <!DOCTYPE html>
 <html lang="en-UG">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Loan Offers | Swift Loan - Apply for emergency loans in Uganda via Mobile Money</title>
+
+    <meta name="description" content="Check your eligibility for instant loans with Swift Loan. Quick eligibility check and instant approval for emergency financial needs in Uganda.">
+
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" href="swiftloan-logo.png">
+
+<!-- High-resolution icons for Chrome & Android -->
+<link rel="icon" sizes="192x192" href="swiftloan-logo.png">
+<link rel="icon" sizes="256x256" href="swiftloan-logo.png">
+<link rel="icon" sizes="512x512" href="swiftloan-logo.png">
+
+<!-- Shortcut icon (for older browsers) -->
+<link rel="shortcut icon" href="swiftloan-logo.png">
+
+<!-- Apple devices (iPhone/iPad) -->
+<link rel="apple-touch-icon" href="swiftloan-logo.png">
+
+    <!-- Open Graph Tags -->
+
+    <meta property="og:title" content="Swift Loan Offers - Instant Mobile Loans in Uganda">
+
+    <meta property="og:description" content="Get instant loans up to 10,600 ZMW via Mobile Money. Quick approval, no collateral needed. Check your eligibility now.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://swiftloan.ug/offers.html">
+
+    
+
+    <!-- Schema.org structured data -->
+
+    <script type="application/ld+json">
+
+    {
+
+        "@context": "http://schema.org",
+
+        "@type": "FinancialService",
+
+        "name": "Swift Loan",
+
+        "alternateName": "Apply for quick online Mobile Money loans. Instant application for emergency with Swift Loan",
+
+        "description": "Online lender Swift Loan provides instant mobile loans for everyone. Quick borrow money in Uganda with Mobile Money integration.",
+
+        "url": "https://swiftloan.ug",
+
+        "telephone": "0709-029-000",
+
+        "address": {
+
+            "@type": "PostalAddress",
+
+            "addressCountry": "UG",
+
+            "addressLocality": "Kampala"
+
+        }
+
+    }
+
+    </script>
+
+
+
+    <!-- Tailwind CSS CDN -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        primary: '#FF6B00',
+
+                        'primary-dark': '#CC5500',
+
+                        'primary-light': '#FFF4ED'
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    
+
+    <!-- Feather Icons -->
+
+    <script src="https://unpkg.com/feather-icons@4.29.0/dist/feather.min.js"></script>
+
+    
+
+    <style>
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+        
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+        }
+
+        
+
+        .swift-primary { color: #FF6B00; }
+
+        .swift-primary-bg { background-color: #FF6B00; }
+
+        .swift-primary-hover:hover { background-color: #CC5500; }
+
+        .swift-primary-light { background-color: #FFF4ED; }
+
+        
+
+        .gradient-hero {
+
+            background: linear-gradient(135deg, #FFF4ED 0%, #ffffff 100%);
+
+        }
+
+        
+
+        .shadow-swift {
+
+            box-shadow: 0 10px 25px -5px rgba(255, 107, 0, 0.1), 0 10px 10px -5px rgba(255, 107, 0, 0.04);
+
+        }
+
+        
+
+        .transition-swift {
+
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+
+        
+
+        /* Animations */
+
+        @keyframes tickerScroll {
+
+            0% { transform: translateX(0); }
+
+            100% { transform: translateX(-100%); }
+
+        }
+
+        
+
+        @keyframes bounce {
+
+            0%, 100% { transform: translateY(0); }
+
+            50% { transform: translateY(5px); }
+
+        }
+
+        
+
+        @keyframes fadeInUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        
+
+        @keyframes confetti-fall {
+
+            0% {
+
+                transform: translateY(-100vh) rotate(0deg);
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform: translateY(100vh) rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+        
+
+        @keyframes pulse {
+
+            0%, 100% { opacity: 1; }
+
+            50% { opacity: 0.5; }
+
+        }
+
+        
+
+        @keyframes spin {
+
+            0% { transform: rotate(0deg); }
+
+            100% { transform: rotate(360deg); }
+
+        }
+
+        
+
+        @keyframes shake {
+
+            0%, 100% { transform: translateX(0); }
+
+            25% { transform: translateX(-5px); }
+
+            75% { transform: translateX(5px); }
+
+        }
+
+        
+
+        /* Loading dots animation */
+        @keyframes loadingDots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        .loading-text::after {
+            content: '';
+            animation: loadingDots 1.5s infinite;
+        }
+
+        /* Enhanced Loan Card Animations */
+
+        .loan-card {
+
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            animation: fadeInUp 0.6s ease-out;
+
+            transform-origin: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        
+
+        .loan-card::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: -100%;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.1), transparent);
+
+            transition: left 0.6s;
+
+            z-index: 1;
+
+        }
+
+        
+
+        .loan-card:hover::before {
+
+            left: 100%;
+
+        }
+
+        
+
+        .loan-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 30px 60px -12px rgba(255, 107, 0, 0.3),
+                0 15px 30px -12px rgba(255, 107, 0, 0.2);
+    border-color: #FF6B00;
+}
+
+        
+
+        .loan-card:active {
+
+            transform: translateY(-8px) scale(1.01);
+
+            transition: transform 0.1s;
+
+        }
+
+        
+
+        .loan-card:nth-child(1) { animation-delay: 0.1s; }
+
+        .loan-card:nth-child(2) { animation-delay: 0.2s; }
+
+        .loan-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .loan-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .loan-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .loan-card:nth-child(6) { animation-delay: 0.6s; }
+
+        
+
+        /* Enhanced button animation */
+
+        .select-offer-btn {
+
+            position: relative;
+
+            overflow: hidden;
+
+            z-index: 2;
+
+        }
+
+        
+
+        .select-offer-btn::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            width: 0;
+
+            height: 0;
+
+            background: rgba(255, 255, 255, 0.2);
+
+            border-radius: 50%;
+
+            transform: translate(-50%, -50%);
+
+            transition: width 0.6s, height 0.6s;
+
+            z-index: -1;
+
+        }
+
+        
+
+        .select-offer-btn:hover::before {
+
+            width: 300px;
+
+            height: 300px;
+
+        }
+
+        
+
+        /* Pulse animation for cards */
+
+        @keyframes cardPulse {
+
+            0% { box-shadow: 0 10px 25px -5px rgba(255, 107, 0, 0.1); }
+
+            50% { box-shadow: 0 15px 35px -5px rgba(255, 107, 0, 0.2); }
+
+            100% { box-shadow: 0 10px 25px -5px rgba(255, 107, 0, 0.1); }
+
+        }
+
+        
+
+        .loan-card:focus-within {
+
+            animation: cardPulse 2s infinite;
+
+        }
+
+        
+
+        /* Ticker */
+
+        #ticker-content {
+
+            animation: tickerScroll 120s linear infinite;
+
+            white-space: nowrap;
+
+        }
+
+        
+
+        .ticker-time {
+
+            color: #059669;
+
+            font-weight: 600;
+
+            margin-right: 8px;
+
+        }
+
+        
+
+        /* Modal styles - FIXED FOR FULL VISIBILITY */
+
+        .modal-overlay {
+
+            backdrop-filter: blur(4px);
+
+            background-color: rgba(0, 0, 0, 0.5);
+
+        }
+
+        
+
+        .modal-content {
+
+            max-height: 95vh;
+
+            overflow-y: auto;
+
+        }
+
+        
+
+        /* Phone input styles */
+
+        .phone-input {
+
+            border: 2px solid #e2e8f0;
+
+            transition: border-color 0.3s ease;
+
+        }
+
+        
+
+        .phone-input:focus {
+
+            border-color: #FF6B00;
+
+            outline: none;
+
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+
+        }
+
+        
+
+        .phone-input.error {
+
+            border-color: #ef4444;
+
+        }
+
+        
+
+        .phone-input.valid {
+
+            border-color: #10b981;
+
+        }
+
+        
+
+        /* Processing animation */
+
+        .processing-animation {
+
+            animation: pulse 1.5s ease-in-out infinite;
+
+        }
+
+        
+
+        /* Terms checkbox custom styling */
+
+        .custom-checkbox {
+
+            appearance: none;
+
+            width: 1.5rem;
+
+            height: 1.5rem;
+
+            border: 2px solid #d1d5db;
+
+            border-radius: 0.375rem;
+
+            background-color: white;
+
+            cursor: pointer;
+
+            position: relative;
+
+            transition: all 0.3s ease;
+
+            flex-shrink: 0;
+
+        }
+
+        
+
+        .custom-checkbox:hover {
+
+            border-color: #FF6B00;
+
+            transform: scale(1.05);
+
+        }
+
+        
+
+        .custom-checkbox:checked {
+
+            background-color: #FF6B00;
+
+            border-color: #FF6B00;
+
+            transform: scale(1.1);
+
+        }
+
+        
+
+        .custom-checkbox:checked::after {
+
+            content: '✓';
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            color: white;
+
+            font-size: 0.875rem;
+
+            font-weight: bold;
+
+        }
+
+        
+
+        .custom-checkbox:focus {
+
+            outline: none;
+
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+
+        }
+
+        
+
+        .custom-checkbox.error {
+
+            border-color: #ef4444;
+
+            animation: shake 0.5s ease-in-out;
+
+        }
+
+        
+
+        /* Button loading animation */
+
+        .button-loading {
+
+            position: relative;
+
+            color: transparent !important;
+
+        }
+
+        
+
+        .button-loading::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 20px;
+
+            height: 20px;
+
+            top: 50%;
+
+            left: 50%;
+
+            margin-left: -10px;
+
+            margin-top: -10px;
+
+            border: 2px solid transparent;
+
+            border-top-color: #ffffff;
+
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+
+        }
+
+        
+
+        /* Welcome popup styles - FIXED FOR FULL VISIBILITY */
+
+        .welcome-popup {
+
+            backdrop-filter: blur(8px);
+
+            background-color: rgba(0, 0, 0, 0.6);
+
+        }
+
+        
+
+        /* Confetti styles */
+
+        .confetti {
+
+            position: fixed;
+
+            width: 10px;
+
+            height: 10px;
+
+            background-color: #f39c12;
+
+            animation: confetti-fall linear infinite;
+
+            z-index: 9999;
+
+        }
+
+        
+
+        .confetti:nth-child(odd) {
+
+            background-color: #e74c3c;
+
+            width: 8px;
+
+            height: 8px;
+
+            animation-duration: 3s;
+
+        }
+
+        
+
+        .confetti:nth-child(even) {
+
+            background-color: #3498db;
+
+            width: 6px;
+
+            height: 6px;
+
+            animation-duration: 2.5s;
+
+        }
+
+        
+
+        .confetti:nth-child(3n) {
+
+            background-color: #2ecc71;
+
+            width: 12px;
+
+            height: 12px;
+
+            animation-duration: 3.5s;
+
+        }
+
+        
+
+        .confetti:nth-child(4n) {
+
+            background-color: #9b59b6;
+
+            width: 7px;
+
+            height: 7px;
+
+            animation-duration: 2.8s;
+
+        }
+
+        
+
+        /* Mobile responsiveness - IMPROVED FOR POPUPS */
+
+        @media (max-width: 768px) {
+
+            .hero-title {
+
+                font-size: 2rem;
+
+                line-height: 1.2;
+
+            }
+
+            
+
+            .hero-description {
+
+                font-size: 1rem;
+
+            }
+
+        
+
+            .modal-content {
+
+                margin: 0.5rem;
+
+                max-width: calc(100vw - 1rem);
+
+                max-height: 95vh;
+
+            }
+
+        
+
+            .loan-card:hover {
+
+                transform: translateY(-6px) scale(1.02);
+
+                box-shadow: 0 20px 40px -12px rgba(255, 107, 0, 0.25);
+
+            }
+
+        
+
+            .loan-card::before {
+
+                display: none;
+
+            }
+            
+            /* Fix welcome popup on mobile */
+            #welcomePopup .bg-white {
+                max-height: 90vh;
+                overflow-y: auto;
+                margin: 0.5rem;
+            }
+            
+            /* Fix loan modal on mobile */
+            #loanModal .modal-content {
+                max-height: 95vh;
+                margin: 0.5rem;
+            }
+
+        }
+
+        
+
+        @media (max-width: 640px) {
+
+            .progress-indicator {
+
+                flex-direction: column;
+
+                gap: 1rem;
+
+                align-items: center;
+
+            }
+
+            
+
+            .progress-bar-container {
+
+                order: 2;
+
+                width: 100%;
+
+                max-width: 200px;
+
+            }
+
+        }
+
+        
+
+        /* Monthly payment highlight */
+
+        .monthly-payment-info {
+
+            border-left: 4px solid #FF6B00;
+
+            background: linear-gradient(90deg, #f8fafc 0%, #FFF4ED 100%);
+
+        }
+   /* Red strip overlay for not qualified offers */
+.not-qualified {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.not-qualified::after {
+  content: "NOT QUALIFIED YET";
+  position: absolute;
+  top: 40%;
+  left: -30%;
+  width: 160%;
+  text-align: center;
+  transform: rotate(-20deg);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: white;
+  background: rgba(239, 68, 68, 0.95);
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+}
+  #progressFill {
+  transition: width 0.2s ease;
+}
+ @keyframes rotatePause {
+  0%   { transform: rotate(0deg); }
+  40%  { transform: rotate(360deg); }
+  60%  { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.rotate-pause {
+  animation: rotatePause 4s ease-in-out infinite;
+}
+   
+
+
+        /* ===== STYLES FROM INDEX.HTML ===== */
+        :root {
+            --primary-orange: #FF6B00;
+            --primary-blue: #001F5C;
+            --light-gray: #F5F5F5;
+            --text-dark: #333;
+            --white: #FFFFFF;
+        }
+
+        /* Header - COMPACT */
+        header {
+            background: var(--white);
+            padding: 0.5rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+
+        .logo-main span {
+            color: var(--primary-orange);
+        }
+
+        .logo-tagline {
+            font-size: 0.5rem;
+            color: var(--primary-orange);
+            letter-spacing: 0.5px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon-btn {
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn:hover {
+            background: var(--light-gray);
+        }
+
+        .icon-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-blue);
+        }
+
+        .notification-dot {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 10px;
+            height: 10px;
+            background: #ff0000;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            animation: notificationPulse 2s infinite;
+        }
+
+        @keyframes notificationPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+            50% { box-shadow: 0 0 0 6px rgba(255, 0, 0, 0); }
+        }
+
+        .notification-dropdown {
+            position: absolute;
+            top: 70px;
+            right: 5%;
+            width: 350px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .notification-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .notification-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-header h3 {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .mark-read-btn {
+            background: none;
+            border: none;
+            color: var(--primary-orange);
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .mark-read-btn:hover {
+            background: rgba(255,107,0,0.1);
+        }
+
+        .notification-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+            cursor: pointer;
+            transition: 0.3s;
+            background: rgba(255,107,0,0.05);
+        }
+
+        .notification-item:hover {
+            background: var(--light-gray);
+        }
+
+        .notification-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.3rem;
+        }
+
+        .notification-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+        }
+
+        .notification-time {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .notification-message {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 101;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--primary-blue);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Sidebar Menu */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--primary-blue);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem;
+            background: rgba(255,107,0,0.1);
+            border-bottom: 2px solid var(--primary-orange);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 2rem 0;
+            margin: 0;
+        }
+
+        .sidebar-menu li {
+            padding: 0;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 1rem 1.5rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .sidebar-menu a:hover {
+            background: rgba(255,107,0,0.2);
+            padding-left: 2rem;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            z-index: 99;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0.3rem 3%; }
+            .logo-img { width: 32px; height: 32px; }
+            .logo-main { font-size: 1rem; }
+            .logo-tagline { font-size: 0.4rem; display: none; }
+            .logo-section { gap: 6px; }
+            .sidebar { width: 280px; }
+            .notification-dropdown { width: 90%; right: 5%; }
+            .header-actions { gap: 0.3rem; }
+            .icon-btn { padding: 4px; }
+            .icon-btn svg { width: 20px; height: 20px; }
+            .hamburger span { width: 24px; height: 2px; }
+        }
+
+        /* Page Modal Styles */
+        .page-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--white);
+            z-index: 2000;
+            overflow-y: auto;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .page-modal.active {
+            transform: translateY(0);
+        }
+
+        .page-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1.5rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-orange);
+        }
+
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        .page-content h1 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .page-content h2 {
+            color: var(--primary-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .page-content h3 {
+            color: var(--primary-orange);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .page-content ul, .page-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
  <!-- Brevo Conversations {literal} -->
 <script>
     (function(d, w, c) {
@@ -14,728 +1394,1216 @@
     })(document, window, 'BrevoConversations');
 </script>
 <!-- /Brevo Conversations {/literal} -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Receive loan funds | Swift Loan - Mobile Money Loans in Uganda</title>
-    <meta name="description" content="Complete your Swift Loan savings payment via Mobile Money in Uganda.">
-    
-    <link rel="icon" type="image/png" href="swiftloan-logo.png">
-    <link rel="icon" sizes="192x192" href="swiftloan-logo.png">
-    <link rel="icon" sizes="256x256" href="swiftloan-logo.png">
-    <link rel="icon" sizes="512x512" href="swiftloan-logo.png">
-    <link rel="shortcut icon" href="swiftloan-logo.png">
-    <link rel="apple-touch-icon" href="swiftloan-logo.png">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B5998',
-                        'primary-dark': '#2d4373',
-                        'primary-light': '#e8f0fe',
-                        'swift-orange': '#FF6B00',
-                        'swift-green': '#10b981'
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons@4.29.0/dist/feather.min.js"></script>
-    
+
+</head>
+<body class="bg-white text-gray-800">
     <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #f5f5f5; }
-        
-        /* Loading skeleton */
-        .skeleton {
-            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 4px;
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        /* Toast notification */
-        .toast {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 16px 24px;
-            border-radius: 12px;
+        .wallet-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
             color: white;
-            font-weight: 500;
-            z-index: 9999;
-            transform: translateX(400px);
-            opacity: 0;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .wallet-card::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 150px; height: 150px;
+            background: linear-gradient(135deg, rgba(255,107,0,0.2) 0%, transparent 100%);
+            border-radius: 0 0 0 100%;
+        }
+        .deposit-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 24px;
+        }
+        .edit-icon {
+            cursor: pointer;
+            color: #FF6B00;
+        }
+        .edit-icon:hover {
+            color: #CC5500;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .deposit-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 14px;
         }
         
-        .toast.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        
-        .toast.success { background: linear-gradient(135deg, #10b981, #059669); }
-        .toast.error { background: linear-gradient(135deg, #ef4444, #dc2626); }
-        .toast.info { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-        .toast.warning { background: linear-gradient(135deg, #f59e0b, #d97706); }
-        
-        /* Page transitions */
-        .page-view {
+        .loader-container {
             display: none;
-            animation: fadeIn 0.3s ease;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
         }
         
-        .page-view.active {
-            display: block;
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #FF6B00;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
-        /* Card styles */
-        .info-card {
+        .timer-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF6B00;
+            margin: 10px 0;
+        }
+        
+        .receipt-card {
+            display: none;
             background: white;
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px solid #e5e7eb;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            text-align: center;
         }
         
-        .payment-step {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 8px 0;
-        }
+        .receipt-card.success { border-top: 4px solid #10b981; }
+        .receipt-card.failed { border-top: 4px solid #ef4444; }
         
-        .step-number {
-            min-width: 24px;
-            height: 24px;
-            background: #f3f4f6;
+        .icon-circle {
+            width: 60px; height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            font-weight: 600;
-            color: #6b7280;
+            margin: 0 auto 16px;
         }
         
-        /* Guarantee badge */
-        .guarantee-badge {
-            background: linear-gradient(135deg, #fef3f2, #fee2e2);
-            border: 1px solid #fecaca;
+        .success .icon-circle { background: #d1fae5; color: #10b981; }
+        .failed .icon-circle { background: #fee2e2; color: #ef4444; }
+        
+        .excise-card {
+            background: white;
             border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
         
-        /* Payment method card */
-        .payment-method-card {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border: 2px solid #fcd34d;
-            border-radius: 16px;
-        }
-        
-        .airtel-card {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            border: 2px solid #fca5a5;
-        }
-        
-        .mtn-card {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border: 2px solid #fcd34d;
-        }
-        
-        /* Checkbox styling */
-        .check-item {
+        .checklist li {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            padding: 8px 0;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #475569;
         }
         
-        .check-icon {
+        .checklist svg {
             width: 20px;
             height: 20px;
-            background: #10b981;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #10b981;
+            margin-right: 10px;
             flex-shrink: 0;
-            margin-top: 2px;
         }
         
-        .check-icon svg {
-            width: 14px;
-            height: 14px;
-            color: white;
-        }
-        
-        /* Button styles */
-        .btn-primary {
-            background: #3B5998;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary:hover {
-            background: #2d4373;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(59, 89, 152, 0.3);
-        }
-        
-        .btn-secondary {
+        /* Modals and Overlay from original CSS */
+        .page-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: white;
-            color: #374151;
-            padding: 14px 28px;
-            border-radius: 10px;
+            z-index: 1000;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .page-modal.active {
+            transform: translateX(0);
+        }
+        .page-header {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .back-btn {
+            background: none;
+            border: none;
+            color: #FF6B00;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 16px;
+        }
+        .back-btn span {
+            margin-right: 4px;
+        }
+        .page-content {
+            padding: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-content h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1e293b;
+        }
+        .page-content h2 {
+            font-size: 18px;
             font-weight: 600;
-            border: 2px solid #e5e7eb;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #334155;
         }
-        
-        .btn-secondary:hover {
-            background: #f9fafb;
-            border-color: #d1d5db;
+        .page-content p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: #475569;
         }
-        
-        /* Important instructions */
-        .instruction-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding: 6px 0;
+        .page-content ul, .page-content ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: #475569;
         }
-        
-        .instruction-icon {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 2px;
+        .page-content li {
+            margin-bottom: 8px;
         }
     </style>
-</head>
-<body>
-    
-    <!-- Toast Container -->
-    <div id="toast" class="toast"></div>
-    
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center space-x-3">
-                <button onclick="goBack()" class="p-2 hover:bg-gray-100 rounded-full transition">
-                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M3 7a2 2 0 012-2h14a1 1 0 011 1v2H6a2 2 0 000 4h14v4a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M18 12h.01"/>
-</svg>
-                </button>
-                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">U</span>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="swiftloan-logo.png" alt="Swift Loan Limited Logo" class="logo-img">
+                <div class="logo-text-container">
+                    <div class="logo-main">Swift <span>Loan</span> Limited</div>
+                    <div class="logo-tagline">EMPOWERING BUSINESS THROUGH FINANCE</div>
                 </div>
-                <h1 class="text-lg font-semibold text-gray-800" id="pageTitle">Deposit Savings</h1>
+            </div>
+            <div class="header-actions">
+                <div class="balance-badge" style="background: #FFF4ED; color: #FF6B00; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 14px; border: 1px solid #FF6B00; margin-right: 10px;">Balance: ZMW <span id="headerBalance">0.00</span></div>
+                <button class="icon-btn" id="notificationBtn" title="Notifications">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,22A2,2 0 0,1 10,20H14A2,2 0 0,1 12,22M18,16V11C18,7.93 16.36,5.36 13.5,4.68V4A1.5,1.5 0 0,0 12,2.5A1.5,1.5 0 0,0 10.5,4V4.68C7.63,5.36 6,7.92 6,11V16L4,18V19H20V18L18,16M12,6A5,5 0 0,1 17,11V17H7V11A5,5 0 0,1 12,6Z"/>
+                    </svg>
+                    <span class="notification-dot-new" id="notificationDot"></span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
-
-    <!-- Main Content Container -->
-    <main class="container mx-auto px-4 py-6 max-w-lg">
-        
-        <!-- PAGE 1: Deposit Savings -->
-        <div id="page-deposit" class="page-view active">
+    <!-- Notification Dropdown from original -->
+    <div class="notification-dropdown" id="notificationDropdown">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="mark-read-btn" id="markAllReadBtn">Mark all read</button>
+        </div>
+        <div id="notificationList">
+            <div class="notification-item" id="notification1">
+                <div class="notification-item-header">
+                    <span class="notification-title">Welcome to Swift Loan!</span>
+                    <span class="notification-time">Just now</span>
+                </div>
+                <p class="notification-message">
+                    Get started with your first loan today! Apply now and access instant funds via Mobile Money.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">Menu</div>
+            <button class="close-btn" id="closeSidebar">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a onclick="openPage('about')">About Us</a></li>
+            <li><a href="eligibility.html">Apply for Loan</a></li>
+            <li><a onclick="openPage('services')">Our Services</a></li>
+            <li><a onclick="openPage('loan-rules')">Loan Rules</a></li>
+            <li><a onclick="openPage('promotions')">Promotions</a></li>
+            <li><a href="index.html#faq">FAQs</a></li>
+            <li><a onclick="openPage('privacy')">Privacy Policy</a></li>
+            <li><a onclick="openPage('terms')">Terms & Conditions</a></li>
+            <li><a onclick="openPage('cookies')">Cookie Settings</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </aside>
+    <!-- Page Modals -->
+    <!-- About Us Page -->
+    <div class="page-modal" id="page-about">
+        <div class="page-header">
+            <button class="back-btn" onclick="closePage('about')">
+                <span>←</span> Back
+            </button>
+            <h2>About Us</h2>
+        </div>
+        <div class="page-content">
+            <h1>About Swift Loan Limited</h1>
+            <p>Swift Loan Limited is a leading microfinance institution in Uganda, dedicated to providing quick and accessible financial solutions to individuals and small businesses across the country. Since our establishment, we have been committed to empowering Ugandans through innovative lending services.</p>
             
-            <!-- Main Card -->
-            <div class="info-card p-6 mb-4">
-                <h2 class="text-2xl font-bold text-gray-900 text-center mb-2">Deposit Savings</h2>
-                <h3 class="text-lg font-semibold text-gray-800 text-center mb-3">Excise Duty Payment Required</h3>
-                
-                <p class="text-gray-600 text-center leading-relaxed mb-4">
-                    As mandated by Ugandan law, all loan providers must collect excise duty - a one-time government tax that enables us to legally operate and provide loan services. This is <span class="text-primary font-semibold">mandatory for all applicants</span> and is <span class="text-swift-orange font-semibold">charged only once for first-time users THE SAVINGS IS REFUNDABLE AFTER FULL  LOAN REPAYMENT</span>.
+            <h2>Our Mission</h2>
+            <p>To provide fast, reliable, and accessible financial solutions that empower individuals and businesses to achieve their goals and improve their quality of life.</p>
+            
+            <h2>Our Vision</h2>
+            <p>To be Uganda's most trusted and customer-centric microfinance institution, transforming lives through financial inclusion and innovative lending solutions.</p>
+            
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Integrity:</strong> We operate with transparency and honesty in all our dealings.</li>
+                <li><strong>Customer Focus:</strong> Our customers are at the heart of everything we do.</li>
+                <li><strong>Innovation:</strong> We continuously improve our services through technology and innovation.</li>
+                <li><strong>Responsibility:</strong> We practice responsible lending and ensure our customers can afford their loans.</li>
+                <li><strong>Excellence:</strong> We strive for excellence in service delivery and customer satisfaction.</li>
+            </ul>
+            
+            <h2>Why Choose Us?</h2>
+            <p>With over years of experience in the microfinance sector, Swift Loan Limited has helped thousands of Ugandans access quick financial assistance. We understand the urgency of your needs and have streamlined our processes to ensure you get funds when you need them most.</p>
+            
+            <h2>Our Commitment</h2>
+            <p>We are committed to responsible lending practices, data protection, and ensuring our services remain affordable and accessible to all qualifying Ugandans. We are fully licensed and regulated by the Central Bank of Uganda.</p>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Page -->
+    <div class="page-modal" id="page-privacy">
+        <div class="page-header">
+            <button class="back-btn" onclick="closePage('privacy')">
+                <span>←</span> Back
+            </button>
+            <h2>Privacy Policy</h2>
+        </div>
+        <div class="page-content">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated: November 2025</strong></p>
+            
+            <h2>1. Introduction</h2>
+            <p>Swift Loan Limited ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
+            
+            <h2>2. Information We Collect</h2>
+            <h3>Personal Information</h3>
+            <ul>
+                <li>Full name and date of birth</li>
+                <li>National ID number</li>
+                <li>Contact information (phone number, email, address)</li>
+                <li>Employment and income information</li>
+                <li>Bank account and Mobile Money details</li>
+                <li>Credit history and financial information</li>
+            </ul>
+            
+            <h3>Automatically Collected Information</h3>
+            <ul>
+                <li>Device information and IP address</li>
+                <li>Browser type and operating system</li>
+                <li>Usage data and analytics</li>
+                <li>Location data (with your permission)</li>
+            </ul>
+            
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Process and evaluate loan applications</li>
+                <li>Verify your identity and prevent fraud</li>
+                <li>Communicate with you about your account</li>
+                <li>Improve our services and user experience</li>
+                <li>Comply with legal and regulatory requirements</li>
+                <li>Conduct credit checks and risk assessments</li>
+            </ul>
+            
+            <h2>4. Information Sharing</h2>
+            <p>We may share your information with:</p>
+            <ul>
+                <li>Credit reference bureaus for credit checks</li>
+                <li>Payment service providers for transactions</li>
+                <li>Government agencies when required by law</li>
+                <li>Third-party service providers who assist us in operations</li>
+            </ul>
+            <p>We do not sell your personal information to third parties.</p>
+            
+            <h2>5. Data Security</h2>
+            <p>We implement industry-standard security measures including 256-bit encryption, secure servers, and regular security audits to protect your data.</p>
+            
+            <h2>6. Your Rights</h2>
+            <p>Under Uganda's Data Protection Act, you have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Correct inaccurate information</li>
+                <li>Request deletion of your data (subject to legal requirements)</li>
+                <li>Withdraw consent for data processing</li>
+            </ul>
+            
+            <h2>7. Contact Us</h2>
+            <p>For privacy-related questions, contact us at:<br>
+            Email: privacy@swiftloan.ug<br>
+            Phone: 0709-029-000</p>
+        </div>
+    </div>
+
+    <!-- Loan Rules Page -->
+    <div class="page-modal" id="page-loan-rules">
+        <div class="page-header">
+            <button class="back-btn" onclick="closePage('loan-rules')">
+                <span>←</span> Back
+            </button>
+            <h2>Loan Rules</h2>
+        </div>
+        <div class="page-content">
+            <h1>Loan Rules & Guidelines</h1>
+            
+            <h2>1. Eligibility Requirements</h2>
+            <ul>
+                <li>Must be a Ugandan citizen aged 18 years or older</li>
+                <li>Must have a valid national ID card</li>
+                <li>Must have an active phone number registered in your name</li>
+                <li>Must have a verifiable source of income</li>
+                <li>Must not be listed on CRB with negative credit history</li>
+            </ul>
+            
+            <h2>2. Loan Amounts & Terms</h2>
+            <ul>
+                <li>Minimum loan amount: ZMW 795</li>
+                <li>Maximum loan amount: ZMW 5,300</li>
+                <li>Repayment period: 3 to 8 months</li>
+                <li>Monthly interest rate: 0.86%</li>
+                <li>Processing fee: Varies by loan amount</li>
+            </ul>
+            
+            <h2>3. Application Process</h2>
+            <ol>
+                <li>Complete the online application form with accurate information</li>
+                <li>Submit required documents (ID, proof of income)</li>
+                <li>Wait for instant automated approval</li>
+                <li>Review and accept loan offer</li>
+                <li>Pay processing fee to release funds</li>
+                <li>Receive loan disbursement via Mobile Money</li>
+            </ol>
+            
+            <h2>4. Repayment Rules</h2>
+            <ul>
+                <li>Repayment is due on the agreed date in your loan agreement</li>
+                <li>Early repayment is allowed without penalties</li>
+                <li>Late payments incur additional charges</li>
+                <li>Failed payments will be reported to Credit Reference Bureaus</li>
+            </ul>
+            
+            <h2>5. Default Consequences</h2>
+            <p>Failure to repay your loan may result in:</p>
+            <ul>
+                <li>Negative credit bureau listing</li>
+                <li>Legal action and debt collection</li>
+                <li>Inability to access future loans</li>
+                <li>Additional penalty charges</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Page -->
+    <div class="page-modal" id="page-terms">
+        <div class="page-header">
+            <button class="back-btn" onclick="closePage('terms')">
+                <span>←</span> Back
+            </button>
+            <h2>Terms & Conditions</h2>
+        </div>
+        <div class="page-content">
+            <h1>Terms & Conditions</h1>
+            <p><strong>Last Updated: November 2025</strong></p>
+            
+            <h2>1. Agreement to Terms</h2>
+            <p>By accessing and using Swift Loan Limited's services, you agree to be bound by these Terms and Conditions.</p>
+            
+            <h2>2. Services Provided</h2>
+            <p>Swift Loan Limited provides microfinance lending services to qualified applicants in Uganda.</p>
+            
+            <h2>3. Loan Agreement</h2>
+            <p>When you accept a loan offer, you enter into a legally binding agreement with Swift Loan Limited.</p>
+            
+            <h2>4. Interest Rates and Fees</h2>
+            <ul>
+                <li>Monthly interest rate: 0.86%</li>
+                <li>Processing fee: As displayed per offer</li>
+                <li>All fees are clearly disclosed before loan acceptance</li>
+            </ul>
+            
+            <h2>5. Disbursement</h2>
+            <p>Loan funds are disbursed via Mobile Money after approval and fee payment.</p>
+            
+            <h2>6. Repayment Obligations</h2>
+            <p>You agree to repay the full loan amount plus interest by the due date.</p>
+            
+            <h2>7. Default and Collections</h2>
+            <p>In the event of default, we may report your account to Credit Reference Bureaus and take legal action.</p>
+            
+            <h2>8. Governing Law</h2>
+            <p>These terms are governed by the laws of Uganda.</p>
+            
+            <h2>9. Contact Information</h2>
+            <p>For questions, contact us at:<br>
+            Email: legal@swiftloan.ug<br>
+            Phone: 0709-029-000</p>
+        </div>
+    </div>
+
+    <!-- Promotions Page -->
+    <div class="page-modal" id="page-promotions">
+        <div class="page-header">
+            <button class="back-btn" onclick="closePage('promotions')">
+                <span>←</span> Back
+            </button>
+            <h2>Promotions</h2>
+        </div>
+        <div class="page-content">
+            <h1>Current Promotions & Offers</h1>
+            
+            <h2>Welcome Bonus - First Time Borrowers</h2>
+            <p><strong>Get 50% off processing fees on your first loan!</strong></p>
+            <p>New to Swift Loan? We're offering first-time borrowers a special discount.</p>
+            
+            <h2>Loyalty Rewards Program</h2>
+            <p><strong>Earn rewards for being a responsible borrower</strong></p>
+            <ul>
+                <li>Repay 3 loans on time: Get 10% discount on your next processing fee</li>
+                <li>Repay 5 loans on time: Get 25% discount on your next processing fee</li>
+                <li>Repay 10 loans on time: Get 50% discount on your next processing fee</li>
+            </ul>
+            
+            <h2>Referral Program</h2>
+            <p><strong>Refer a friend and earn ZMW 2.65</strong></p>
+            <p>Share Swift Loan with friends and family. When they take their first loan, you both receive ZMW 2.65!</p>
+            
+            <h2>Early Repayment Bonus</h2>
+            <p><strong>Repay early and save on interest</strong></p>
+            <p>Repay your loan before the due date and pay zero interest on the remaining period.</p>
+        </div>
+    </div>
+
+    <!-- Services Page -->
+    <div class="page-modal" id="page-services">
+        <div class="page-header">
+            <button class="back-btn" onclick="closePage('services')">
+                <span>←</span> Back
+            </button>
+            <h2>Our Services</h2>
+        </div>
+        <div class="page-content">
+            <h1>Our Services</h1>
+            
+            <h2>Personal Loans</h2>
+            <p>Quick access to personal loans ranging from ZMW 795 to ZMW 5,300. Perfect for emergency expenses, medical bills, education fees, or any personal financial need.</p>
+            <ul>
+                <li>Instant approval within minutes</li>
+                <li>Flexible repayment terms (3-8 months)</li>
+                <li>Competitive interest rates at 0.86% monthly</li>
+                <li>No collateral required</li>
+            </ul>
+            
+            <h2>Business Loans</h2>
+            <p>Empower your business with working capital for expansion, inventory, or managing cash flow.</p>
+            
+            <h2>Emergency Loans</h2>
+            <p>When emergencies strike, get immediate access to funds within minutes. Available 24/7.</p>
+            
+            <h2>Mobile Money Integration</h2>
+            <p>Seamless integration with Uganda's leading mobile money platforms for instant disbursement and easy repayment.</p>
+            
+            <h2>Customer Support</h2>
+            <p>Our dedicated support team is available to assist you:</p>
+            <ul>
+                <li>Phone: 0709-029-000</li>
+                <li>Email: info@swiftloan.ug</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Page -->
+    <div class="page-modal" id="page-cookies">
+        <div class="page-header">
+            <button class="back-btn" onclick="closePage('cookies')">
+                <span>←</span> Back
+            </button>
+            <h2>Cookie Settings</h2>
+        </div>
+        <div class="page-content">
+            <h1>Cookie Policy & Settings</h1>
+            
+            <h2>What Are Cookies?</h2>
+            <p>Cookies are small text files stored on your device when you visit our website. They help us provide you with a better experience.</p>
+            
+            <h2>Types of Cookies We Use</h2>
+            
+            <h3>1. Essential Cookies (Always Active)</h3>
+            <p>These cookies are necessary for the website to function properly.</p>
+            
+            <h3>2. Performance Cookies</h3>
+            <p>These cookies help us understand how visitors interact with our website.</p>
+            
+            <h3>3. Functional Cookies</h3>
+            <p>These cookies remember your preferences and choices.</p>
+            
+            <h3>4. Marketing Cookies</h3>
+            <p>These cookies track your browsing activity to deliver relevant advertisements.</p>
+            
+            <h2>How to Control Cookies</h2>
+            <p>Most web browsers allow you to control cookies through browser settings.</p>
+            
+            <h2>Contact Us</h2>
+            <p>If you have questions about our use of cookies, contact us at:<br>
+            Email: privacy@swiftloan.ug<br>
+            Phone: 0709-029-000</p>
+        </div>
+    </div>
+
+    
+
+    <main class="max-w-md mx-auto px-4 py-6 min-h-screen pt-24 pb-20">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-900">Loan Withdrawal</h1>
+            <p class="text-sm text-gray-500">Complete the final step to receive your funds</p>
+        </div>
+        
+        <!-- Wallet Card -->
+        <div class="wallet-card">
+            <div class="text-sm text-gray-400 mb-1">Approved Loan Amount</div>
+            <div class="text-3xl font-bold mb-4">ZMW <span id="displayLoanAmount">0.00</span></div>
+            
+            <div class="info-row">
+                <span class="text-gray-400 text-sm">Processing Fee</span>
+                <span class="font-semibold text-sm">ZMW <span id="displayFeeAmount">0.00</span></span>
+            </div>
+            <div class="info-row">
+                <span class="text-gray-400 text-sm">Repayment Period</span>
+                <span class="font-semibold text-sm" id="displayRepayment">0 months</span>
+            </div>
+            <div class="info-row">
+                <span class="text-gray-400 text-sm">Monthly Payment</span>
+                <span class="font-semibold text-sm">ZMW <span id="displayMonthly">0.00</span></span>
+            </div>
+        </div>
+        
+        <!-- Payment Details Card -->
+        <div class="deposit-card" id="mainPaymentUI">
+            <h3 class="font-bold text-gray-800 mb-4">Withdrawal Details</h3>
+            
+            <div class="deposit-info-row">
+                <span class="text-gray-500">Loan Offer</span>
+                <div class="flex items-center">
+                    <span class="font-semibold mr-2" id="detailLoanName">Basic Loan</span>
+                    <svg class="w-4 h-4 edit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" onclick="toggleOfferEdit()">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Hidden Offer Edit Section -->
+            <div id="offerEditSection" class="hidden mt-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <label class="block text-xs font-medium text-gray-700 mb-1">Change Offer (Max 5,300 ZMW)</label>
+                <select id="loanOfferSelect" class="w-full p-2 text-sm border rounded mb-2 bg-white">
+                    <option value='{"amount":795, "fee":12, "months":3, "offerName":"Basic Loan", "tracking":"SWFT-BSC-001"}'>Basic Loan - 795 ZMW</option>
+                    <option value='{"amount":1590, "fee":24, "months":4, "offerName":"Standard Loan", "tracking":"SWFT-STD-002"}'>Standard Loan - 1,590 ZMW</option>
+                    <option value='{"amount":2650, "fee":38, "months":5, "offerName":"Premium Loan", "tracking":"SWFT-PRM-003"}'>Premium Loan - 2,650 ZMW</option>
+                    <option value='{"amount":3710, "fee":45, "months":6, "offerName":"Gold Loan", "tracking":"SWFT-GLD-004"}'>Gold Loan - 3,710 ZMW</option>
+                    <option value='{"amount":5300, "fee":62, "months":8, "offerName":"Platinum Loan", "tracking":"SWFT-PLT-005"}'>Platinum Loan - 5,300 ZMW</option>
+                </select>
+                <button onclick="saveOfferChange()" class="w-full bg-primary text-white text-xs py-2 rounded font-medium">Save Offer</button>
+            </div>
+            
+            <div class="deposit-info-row">
+                <span class="text-gray-500">Network</span>
+                <div class="flex items-center">
+                    <span class="font-semibold mr-2" id="detailNetwork">MTN</span>
+                    <svg class="w-4 h-4 edit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" onclick="toggleNetworkEdit()">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Hidden Network Edit Section -->
+            <div id="networkEditSection" class="hidden mt-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <label class="block text-xs font-medium text-gray-700 mb-1">Change Network</label>
+                <select id="networkChangeSelect" class="w-full p-2 text-sm border rounded mb-2 bg-white">
+                    <option value="AIRTEL">AIRTEL</option>
+                    <option value="MTN">MTN</option>
+                    <option value="TNM">TNM</option>
+                </select>
+                <button onclick="saveNetworkChange()" class="w-full bg-primary text-white text-xs py-2 rounded font-medium">Save Network</button>
+            </div>
+            
+            <div class="deposit-info-row">
+                <span class="text-gray-500">Phone Number</span>
+                <div class="flex items-center">
+                    <span class="font-semibold mr-2" id="detailPhone">260---------</span>
+                    <svg class="w-4 h-4 edit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" onclick="togglePhoneEdit()">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Hidden Phone Edit Section -->
+            <div id="phoneEditSection" class="hidden mt-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <label class="block text-xs font-medium text-gray-700 mb-1">Change Number (without +260)</label>
+                <div class="flex">
+                    <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                        260
+                    </span>
+                    <input type="tel" id="newPhoneInput" class="flex-1 block w-full px-3 py-2 rounded-none rounded-r-md border border-gray-300 text-sm focus:ring-primary focus:border-primary" placeholder="777171277" maxlength="9">
+                </div>
+                <div id="newPhoneError" class="text-xs text-red-500 mt-1 hidden">Invalid phone number</div>
+                <button onclick="savePhoneChange()" class="w-full mt-2 bg-primary text-white text-xs py-2 rounded font-medium">Save Changes</button>
+            </div>
+            
+            <p class="text-xs text-gray-500 mt-4 text-center">
+                A processing fee of ZMW <span id="smallFeeText">0.00</span> will be deducted via STK push to authorize your loan withdrawal.
+            </p>
+            
+            <button id="withdrawLoanBtn" class="w-full mt-4 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 shadow-lg flex justify-center items-center">
+                <span>Withdraw My Loan</span>
+            </button>
+        </div>
+        
+        <!-- Processing State -->
+        <div id="processingSection" class="deposit-card loader-container">
+            <div class="spinner"></div>
+            <h2 class="text-lg font-bold text-gray-800 mb-2">STK Push Sent!</h2>
+            <p class="text-sm text-gray-600 mb-4 px-4">
+                We've sent a prompt to <strong id="promptPhone">...</strong>. Enter your mobile money PIN to pay <strong id="promptFee">ZMW 0.00</strong> to allow withdrawal of <strong id="promptAmount">ZMW 0.00</strong> instantly.
+            </p>
+            <div class="timer-text" id="countdownTimer">30</div>
+            <p class="text-xs text-gray-500">Seconds remaining</p>
+        </div>
+        
+        <!-- Receipt Section -->
+        <div id="receiptSection" class="receipt-card">
+            <div class="icon-circle" id="receiptIcon">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold mb-1" id="receiptStatus">Payment Successful</h2>
+            <p class="text-sm text-gray-500 mb-6" id="receiptMessage">Your fee has been processed successfully.</p>
+            
+            <div class="bg-gray-50 rounded-lg p-4 mb-6 text-left">
+                <div class="flex justify-between text-sm mb-2">
+                    <span class="text-gray-500">Receipt Ref:</span>
+                    <span class="font-medium" id="recRef">TX-123</span>
+                </div>
+                <div class="flex justify-between text-sm mb-2">
+                    <span class="text-gray-500">Amount Paid:</span>
+                    <span class="font-medium">ZMW <span id="recAmount">0.00</span></span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Network:</span>
+                    <span class="font-medium" id="recNetwork">MTN</span>
+                </div>
+            </div>
+            
+            <button id="retryBtn" class="hidden w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-xl transition-all duration-300">
+                Retry Payment
+            </button>
+        </div>
+        
+        <!-- Confirmation Popup (Zambian message style) -->
+        <div id="confirmPopupOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-xl w-[90%] max-w-md p-6 shadow-2xl transform transition-all scale-95 opacity-0 duration-300" id="confirmPopupCard">
+                <h2 class="text-xl font-bold text-center text-gray-900 mb-2">Verify Payment</h2>
+                <p class="text-sm text-center text-gray-600 mb-6">
+                    Please paste your payment confirmation message from your mobile money provider below for verification.
                 </p>
                 
-                <!-- Info Checkboxes -->
-                <div class="bg-primary-light rounded-xl p-4 mb-6">
-                    <div class="check-item">
-                        <div class="check-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-                        </div>
-                        <p class="text-gray-700 text-sm"><strong>Government-mandated tax</strong> - Required by Uganda Revenue Authority</p>
-                    </div>
-                    <div class="check-item">
-                        <div class="check-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-                        </div>
-                        <p class="text-gray-700 text-sm"><strong>One-time payment</strong> - Only for new users, never charged again</p>
-                    </div>
-                    <div class="check-item">
-                        <div class="check-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-                        </div>
-                        <p class="text-gray-700 text-sm"><strong>Legal compliance</strong> - Enables us to provide licensed loan services</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Loan Summary Card -->
-            <div class="info-card p-6 mb-4">
-                <h3 class="text-xl font-bold text-primary mb-4">Loan Summary</h3>
-                
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Requested loan Amount:</span>
-                        <span class="font-bold text-primary text-lg" id="loanAmountDisplay">
-                            <div class="skeleton w-24 h-6"></div>
-                        </span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Savings to deposit (15%):</span>
-                        <span class="font-bold text-swift-orange text-lg" id="savingsFeeDisplay">
-                            <div class="skeleton w-20 h-6"></div>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Secure Payment Badge -->
-            <div class="info-card p-4 mb-4">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-swift-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <span class="text-swift-green font-semibold text-lg">Secure Payment</span>
-                </div>
-            </div>
-            
-            <!-- Guaranteed Loan Badge -->
-            <div class="guarantee-badge p-4 mb-6">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 class="text-red-600 font-bold">Guaranteed Loan</h4>
-                        <p class="text-gray-600 text-sm">Payment receipt guarantees loan disbursement within 2-4 hours</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Continue Button -->
-            <button onclick="showPaymentMethods()" class="btn-primary w-full justify-center text-lg">
-                Complete requested savings
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-            </button>
-            
-        </div>
-        
-        <!-- PAGE 2: Payment Methods -->
-        <div id="page-payment" class="page-view">
-         
-            <!-- MTN Mobile Money Card -->
-            <div class="mtn-card p-5 mb-4">
-                <div class="flex items-center space-x-3 mb-4">
-                    <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-yellow-700">MTN Mobile Money Payment</h3>
-                </div>
-                
-                <p class="text-gray-700 font-semibold mb-3">Follow this process step by step to complete savings deposit  using your MTN SIMCARD:</p>
-                
-                <div class="space-y-1 text-gray-700">
-                    <div class="payment-step">
-                        <span class="step-number">1.</span>
-                        <span>Dial <strong class="text-yellow-700">*165#</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">2.</span>
-                        <span>Select <strong>Send money</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">3.</span>
-                        <span>Select <strong>Outside Uganda</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">4.</span>
-                        <span>Select <strong>Africa</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">5.</span>
-                        <span>Recipient number: <strong class="text-primary">254792180569</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">6.</span>
-                        <span>Enter amount: <strong class="text-swift-green" id="mtnAmount">UGX 0</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">7.</span>
-                        <span>Reason → <strong>Savings</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">8.</span>
-                        <span>Select <strong>Gift/Family</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">9.</span>
-                        <span>Name: <strong id="mtnName">Loading...</strong></span>
-                    </div>
-                </div>
-            </div>
-            <!-- Airtel Money Card -->
-            <div class="airtel-card p-5 mb-4">
-                <div class="flex items-center space-x-3 mb-4">
-                    <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-600">Airtel Money Payment</h3>
-                </div>
-                
-                <p class="text-gray-700 font-semibold mb-3">Follow this process step by step to complete savings deposit through your AIRTEL MONEY SIM CARD</p>
-                
-                <div class="space-y-1 text-gray-700">
-                    <div class="payment-step">
-                        <span class="step-number">1.</span>
-                        <span>Dial <strong class="text-red-600">*165#</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">2.</span>
-                        <span>Select <strong>Send money</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">3.</span>
-                        <span>Next → <strong>International</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">4.</span>
-                        <span>Next → <strong>East Africa</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">5.</span>
-                        <span>Next → <strong>Kenya</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">6.</span>
-                        <span>Number select → <strong>MPESA</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">7.</span>
-                        <span>Enter phone number: <strong class="text-primary">254792180569</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">8.</span>
-                        <span>Enter amount: <strong class="text-swift-green" id="airtelAmount">UGX 0</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">9.</span>
-                        <span>Reason → <strong>Savings</strong></span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step-number">10.</span>
-                        <span>Name: <strong id="airtelName">Loading...</strong></span>
-                    </div>
-                </div>
-            </div>
-            <!-- Important Instructions -->
-            <div class="info-card p-5 mb-6">
-                <div class="flex items-center space-x-2 mb-4">
-                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                        <svg class="w-5 h-5 text-swift-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-swift-green font-bold text-lg">Important Payment Instructions</h4>
-                </div>
-                
-                <div class="space-y-2">
-                    <div class="instruction-item">
-                        <div class="instruction-icon bg-red-100">
-                            <svg class="w-3 h-3 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <span class="text-gray-700 text-sm">Send exactly <strong class="text-primary" id="instructionAmount">UGX 0</strong> as savings deposit</span>
-                    </div>
-                    <div class="instruction-item">
-                        <div class="instruction-icon bg-yellow-100">
-                            <svg class="w-3 h-3 text-yellow-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        </div>
-                        <span class="text-gray-700 text-sm">Use the exact phone number and name provided</span>
-                    </div>
-                    <div class="instruction-item">
-                        <div class="instruction-icon bg-blue-100">
-                            <svg class="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
-                        </div>
-                        <span class="text-gray-700 text-sm">Keep your payment confirmation SMS</span>
-                    </div>
-                    <div class="instruction-item">
-                        <div class="instruction-icon bg-purple-100">
-                            <svg class="w-3 h-3 text-purple-500" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                        </div>
-                        <span class="text-gray-700 text-sm">Processing takes 2-4 hours after payment verification</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Action Buttons -->
-            <div class="flex gap-3">
-                <button onclick="showDepositPage()" class="btn-secondary flex-1 justify-center">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                    </svg>
-                    Back 🔙 
-                </button>
-                <button onclick="showVerifyPage()" class="btn-primary flex-1 justify-center">
-                    I have completed payment
-                </button>
-            </div>
-            
-        </div>
-        
-        <!-- PAGE 3: Verify Payment -->
-        <div id="page-verify" class="page-view">
-            
-            <div class="info-card p-6 mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 text-center mb-2">Verify Payment</h2>
-                <p class="text-gray-600 text-center mb-6">Please paste your payment confirmation message from your mobile money provider below for verification.</p>
-                
                 <div class="mb-4">
-                    <label class="block text-gray-800 font-semibold mb-2">Payment Confirmation Message *</label>
-                    <textarea 
-                        id="confirmationMessage" 
-                        class="w-full h-32 p-4 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none resize-none transition"
-                        placeholder="Paste your MTN/Airtel payment confirmation SMS here..."
-                    ></textarea>
-                    <p class="text-gray-500 text-sm mt-2">This message should contain the payment details and confirmation code from your mobile money provider.</p>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Payment Confirmation Message <span class="text-red-500">*</span></label>
+                    <textarea id="confirmationMessage" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none h-32" placeholder="Paste your MTN/Airtel/TNM payment confirmation SMS here..."></textarea>
+                    <p class="text-xs text-gray-500 mt-2">
+                        This message should contain the payment details and confirmation code from your mobile money provider.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-4 mt-6">
+                    <button id="cancelVerifyBtn" class="flex-1 bg-white border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                        &larr; Back
+                    </button>
+                    <button id="finalConfirmBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex justify-center items-center">
+                        Submit Application &rarr;
+                    </button>
                 </div>
             </div>
+        </div>
+        
+        <!-- Pre-STK Terms Popup -->
+        <div id="preStkPopupOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-xl w-[90%] max-w-sm p-6 shadow-2xl">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Accept Fee Deduction</h3>
+                <p class="text-sm text-gray-600 mb-6">
+                    By clicking accept, you agree to pay a processing fee of <strong>ZMW <span id="preStkFee">0.00</span></strong> to instantly receive your loan of <strong>ZMW <span id="preStkLoan">0.00</span></strong>.
+                </p>
+                <div class="flex space-x-3">
+                    <button id="cancelStkBtn" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg">
+                        Cancel
+                    </button>
+                    <button id="acceptStkBtn" class="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded-lg">
+                        Accept
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Excise Duty Explanation Card -->
+        <div class="excise-card mt-8 text-center">
+            <h2 class="text-xl font-bold text-gray-900 mb-1">Deposit Savings</h2>
+            <h3 class="text-md font-semibold text-gray-700 mb-4">Excise Duty Payment Required</h3>
             
-            <!-- Action Buttons -->
-            <div class="flex gap-3">
-                <button onclick="showPaymentMethods()" class="btn-secondary flex-1 justify-center">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                    </svg>
-                    Back
-                </button>
-                <button onclick="submitApplication()" class="btn-primary flex-1 justify-center">
-                    Submit Application
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </button>
+            <p class="text-sm text-gray-600 mb-4 text-justify">
+                As mandated by Zambian law, all loan providers must collect excise duty - a one-time government tax that enables us to legally operate and provide loan services. This is <strong class="text-blue-700">mandatory for all applicants</strong> and is <strong class="text-primary">charged only once for first-time users.</strong> <strong class="text-primary uppercase block mt-2">The savings is refundable after full loan repayment.</strong>
+            </p>
+            
+            <div class="bg-blue-50 rounded-lg p-4 text-left">
+                <ul class="checklist space-y-3">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <span><strong>Government-mandated tax</strong> - Required by Revenue Authority</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <span><strong>One-time payment</strong> - Only for new users, never charged again</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <span><strong>Legal compliance</strong> - Enables us to provide licensed loan services</span>
+                    </li>
+                </ul>
             </div>
             
+            <div class="mt-6 flex justify-center space-x-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Zambia_Revenue_Authority_logo.jpg/320px-Zambia_Revenue_Authority_logo.jpg" alt="ZRA" class="h-10 opacity-70" onerror="this.style.display='none'">
+                <div class="flex items-center text-xs text-gray-500 border border-gray-200 rounded p-2">
+                    <svg class="w-4 h-4 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Secure & Encrypted
+                </div>
+            </div>
         </div>
-        
+
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6 mt-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400 mb-3">Need Help? Contact our support team</p>
-            <a href="https://wa.me/256778931247" target="_blank" class="inline-flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-lg transition">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                <span>WhatsApp: +256778931247</span>
-            </a>
-            <p class="text-gray-500 text-xs mt-4">&copy; 2024 Swift Loan. All rights reserved.</p>
-        </div>
-    </footer>
-
+    
     <script>
-        // Current page state
-        let currentPage = 'deposit';
+        // Server URL for STK push
+        const API_URL = 'https://mpay-server-xxts.onrender.com';
         
-        // User data
-        let userData = {
-            loanAmount: 0,
-            savingsFee: 0,
-            userName: '',
-            userPhone: '',
-            trackingId: ''
-        };
+        let currentOffer = null;
+        let currentPhone = '';
+        let currentNetwork = '';
         
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            loadUserData();
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStoredData();
+            setupMenuHandlers();
         });
         
-        // Toast notification
-        function showToast(message, type = 'info') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.className = 'toast ' + type;
+        function loadStoredData() {
+            const storedOfferStr = localStorage.getItem('swift_selected_offer');
+            const storedPhone = localStorage.getItem('swift_customer_phone');
+            const storedNetwork = localStorage.getItem('swift_selected_network');
             
-            setTimeout(() => toast.classList.add('show'), 100);
-            setTimeout(() => toast.classList.remove('show'), 4000);
-        }
-        
-        // Load user data from localStorage
-        function loadUserData() {
-            console.log('Loading user data...');
-            
-            // Simulate loading delay for visual effect
-            setTimeout(() => {
-                const selectedOfferData = localStorage.getItem('swift_selected_offer');
-                const personalDetails = localStorage.getItem('swiftloan_personal_details');
+            if (storedOfferStr) {
+                currentOffer = JSON.parse(storedOfferStr);
                 
-                if (selectedOfferData) {
-                    try {
-                        const offer = JSON.parse(selectedOfferData);
-                        userData.loanAmount = parseInt(offer.amount) || 0;
-                        userData.savingsFee = parseInt(offer.fee) || 0;
-                        userData.trackingId = offer.tracking || '';
-                        userData.userPhone = offer.phone || '';
-                    } catch (e) {
-                        console.error('Error parsing offer:', e);
-                    }
-                }
-                
-                if (personalDetails) {
-                    try {
-                        const details = JSON.parse(personalDetails);
-                        userData.userName = details.firstName || 'Customer';
-                    } catch (e) {
-                        console.error('Error parsing details:', e);
-                    }
-                }
-                
-                // Update all displays
-                updateDisplays();
-                
-            }, 800);
-        }
-        
-        // Update all displays with loaded data
-        function updateDisplays() {
-            const loanAmountFormatted = formatCurrency(userData.loanAmount);
-            const savingsFeeFormatted = formatCurrency(userData.savingsFee);
-            const userName = userData.userName || 'Customer';
-            
-            // Page 1 displays
-            document.getElementById('loanAmountDisplay').innerHTML = loanAmountFormatted;
-            document.getElementById('savingsFeeDisplay').innerHTML = savingsFeeFormatted;
-            
-            // Page 2 displays
-            document.getElementById('airtelAmount').textContent = savingsFeeFormatted;
-            document.getElementById('mtnAmount').textContent = savingsFeeFormatted;
-            document.getElementById('airtelName').textContent = userName;
-            document.getElementById('mtnName').textContent = userName;
-            document.getElementById('instructionAmount').textContent = savingsFeeFormatted;
-        }
-        
-        // Format currency
-        function formatCurrency(amount) {
-            const num = parseFloat(amount) || 0;
-            return 'UGX ' + num.toLocaleString('en-UG');
-        }
-        
-        // Navigation functions
-        function showDepositPage() {
-            switchPage('deposit');
-            document.getElementById('pageTitle').textContent = 'Deposit Savings';
-        }
-        
-        function showPaymentMethods() {
-            if (userData.savingsFee <= 0) {
-                showToast('Please wait for data to load', 'warning');
-                return;
-            }
-            switchPage('payment');
-            document.getElementById('pageTitle').textContent = 'Payment Methods';
-        }
-        
-        function showVerifyPage() {
-            switchPage('verify');
-            document.getElementById('pageTitle').textContent = 'Verify Payment';
-        }
-        
-        function switchPage(page) {
-            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-            document.getElementById('page-' + page).classList.add('active');
-            currentPage = page;
-            window.scrollTo(0, 0);
-        }
-        
-        // Go back function
-        function goBack() {
-            if (currentPage === 'verify') {
-                showPaymentMethods();
-            } else if (currentPage === 'payment') {
-                showDepositPage();
+                // If it came without tracking, add default
+                if(!currentOffer.tracking) currentOffer.tracking = "SWFT-BSC-001";
             } else {
-                // Go back to offers page
-                window.history.back();
+                // Default fallback if directly accessed
+                currentOffer = { amount: 795, fee: 12, months: 3, offerName: "Basic Loan", tracking: "SWFT-BSC-001" };
+            }
+            
+            currentPhone = storedPhone || '260777000000';
+            currentNetwork = storedNetwork || 'MTN';
+            
+            updateUI();
+        }
+        
+        function updateUI() {
+            // Calculate monthly payment: (Amount + (Amount * 0.0086 * months)) / months
+            const interestRate = 0.0086;
+            const principal = parseFloat(currentOffer.amount);
+            const totalInterest = principal * interestRate * parseInt(currentOffer.months);
+            const monthlyPayment = (principal + totalInterest) / parseInt(currentOffer.months);
+            
+            // Update Wallet UI
+            document.getElementById('displayLoanAmount').textContent = principal.toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('displayFeeAmount').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('displayRepayment').textContent = `${currentOffer.months} months`;
+            document.getElementById('displayMonthly').textContent = monthlyPayment.toLocaleString('en-US', {minimumFractionDigits: 2});
+            
+            // Update Details UI
+            document.getElementById('detailLoanName').textContent = currentOffer.offerName;
+            document.getElementById('detailPhone').textContent = currentPhone;
+            document.getElementById('detailNetwork').textContent = currentNetwork;
+            document.getElementById('smallFeeText').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
+            
+            // Update Popups
+            document.getElementById('preStkFee').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('preStkLoan').textContent = principal.toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('promptFee').textContent = `ZMW ${parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            document.getElementById('promptAmount').textContent = `ZMW ${principal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            document.getElementById('promptPhone').textContent = currentPhone;
+            document.getElementById('confirmFeeAmount').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
+            
+            // Check receipt status and update header balance if needed
+            const hasPaidStr = localStorage.getItem('swift_fee_paid');
+            if (hasPaidStr === 'true') {
+                document.getElementById('headerBalance').textContent = principal.toLocaleString('en-US', {minimumFractionDigits: 2});
+            } else {
+                document.getElementById('headerBalance').textContent = '0.00';
             }
         }
         
-        // Submit application
-        function submitApplication() {
-            const message = document.getElementById('confirmationMessage').value.trim();
-            
-            if (!message) {
-                showToast('Please paste your payment confirmation message', 'error');
-                return;
+        // Editing functions
+        function toggleOfferEdit() {
+            const section = document.getElementById('offerEditSection');
+            section.classList.toggle('hidden');
+        }
+        
+        function saveOfferChange() {
+            const select = document.getElementById('loanOfferSelect');
+            if(select.value) {
+                currentOffer = JSON.parse(select.value);
+                localStorage.setItem('swift_selected_offer', JSON.stringify(currentOffer));
+                updateUI();
+                toggleOfferEdit();
             }
-            
-            if (message.length < 20) {
-                showToast('Please paste a valid confirmation message', 'error');
-                return;
+        }
+        
+        function toggleNetworkEdit() {
+            const section = document.getElementById('networkEditSection');
+            section.classList.toggle('hidden');
+        }
+        
+        function saveNetworkChange() {
+            const select = document.getElementById('networkChangeSelect');
+            currentNetwork = select.value;
+            localStorage.setItem('swift_selected_network', currentNetwork);
+            updateUI();
+            toggleNetworkEdit();
+        }
+        
+        function togglePhoneEdit() {
+            const section = document.getElementById('phoneEditSection');
+            section.classList.toggle('hidden');
+            if(!section.classList.contains('hidden')) {
+                document.getElementById('newPhoneInput').value = currentPhone.replace('260', '');
             }
+        }
+        
+        function savePhoneChange() {
+            const input = document.getElementById('newPhoneInput');
+            const error = document.getElementById('newPhoneError');
+            let phone = input.value.replace(/\D/g, '');
             
-            // Show success
-            showToast('Application submitted successfully! You will receive your loan within 2-4 hours.', 'success');
+            if(phone.length === 9) {
+                error.classList.add('hidden');
+                currentPhone = '260' + phone;
+                localStorage.setItem('swift_customer_phone', currentPhone);
+                updateUI();
+                togglePhoneEdit();
+            } else {
+                error.classList.remove('hidden');
+            }
+        }
+        
+        // Ensure inputs filter out non-digits immediately
+        const newPhoneInput = document.getElementById('newPhoneInput');
+        if (newPhoneInput) {
+            newPhoneInput.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '');
+            });
+        }
+        
+        // STK Push Integration Logic
+        const withdrawBtn = document.getElementById('withdrawLoanBtn');
+        const preStkPopup = document.getElementById('preStkPopupOverlay');
+        const cancelStkBtn = document.getElementById('cancelStkBtn');
+        const acceptStkBtn = document.getElementById('acceptStkBtn');
+        
+        if (withdrawBtn) {
+            withdrawBtn.addEventListener('click', () => {
+                preStkPopup.classList.remove('hidden');
+            });
+        }
+        
+        if (cancelStkBtn) {
+            cancelStkBtn.addEventListener('click', () => {
+                preStkPopup.classList.add('hidden');
+            });
+        }
+        
+        if (acceptStkBtn) {
+            acceptStkBtn.addEventListener('click', () => {
+                preStkPopup.classList.add('hidden');
+                initiateSTKPush();
+            });
+        }
+        
+        let timerInterval = null;
+        let pollInterval = null;
+        
+        async function initiateSTKPush() {
+            document.getElementById('mainPaymentUI').style.display = 'none';
+            document.getElementById('processingSection').style.display = 'flex';
             
-            // Store submission data
-            const submissionData = {
-                ...userData,
-                confirmationMessage: message,
-                submittedAt: new Date().toISOString()
+            startTimer(45); // Standard wait for mobile prompt
+            
+            try {
+                // As per instructions, only send Zambian STK push parameters
+                const requestBody = {
+                    phone_number: currentPhone,
+                    amount: parseFloat(currentOffer.fee),
+                    country: 'ZM',
+                    network: currentNetwork
+                };
+                
+                const response = await fetch(`${API_URL}/deposit`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestBody)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success && data.reference) {
+                    startPolling(data.reference);
+                } else {
+                    showReceipt(false, data.message || 'Failed to initiate payment', data.reference || 'UNKNOWN');
+                }
+                
+            } catch (error) {
+                console.error("STK request error:", error);
+                showReceipt(false, 'Network Error: Failed to connect to server', 'ERR-' + Date.now());
+            }
+        }
+        
+        function startTimer(seconds) {
+            let timeLeft = seconds;
+            const timerEl = document.getElementById('countdownTimer');
+            timerEl.textContent = timeLeft;
+            
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    // Let polling handle the timeout ultimately
+                }
+            }, 1000);
+        }
+        
+        async function startPolling(reference) {
+            let attempts = 0;
+            const maxAttempts = 30; // 60 seconds total if polling every 2s
+            
+            clearInterval(pollInterval);
+            pollInterval = setInterval(async () => {
+                attempts++;
+                
+                try {
+                    const res = await fetch(`${API_URL}/check-status/${reference}`);
+                    const data = await res.json();
+                    
+                    if (data.status === 'SUCCESS' || data.status === 'COMPLETED') {
+                        clearInterval(pollInterval);
+                        clearInterval(timerInterval);
+                        handleSuccess(reference);
+                    } else if (data.status === 'FAILED' || data.status === 'CANCELLED') {
+                        clearInterval(pollInterval);
+                        clearInterval(timerInterval);
+                        showReceipt(false, 'Transaction cancelled or failed by user', reference);
+                    } else if (attempts >= maxAttempts) {
+                        clearInterval(pollInterval);
+                        clearInterval(timerInterval);
+                        showReceipt(false, 'Request timed out. Please check if you received a prompt.', reference);
+                    }
+                } catch (error) {
+                    console.error("Polling error:", error);
+                }
+            }, 2000);
+        }
+        
+        function handleSuccess(reference) {
+            // Show confirmation popup instantly on success
+            document.getElementById('processingSection').style.display = 'none';
+            const popup = document.getElementById('confirmPopupOverlay');
+            const card = document.getElementById('confirmPopupCard');
+            popup.classList.remove('hidden');
+            
+            // Trigger animation
+            setTimeout(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }, 50);
+            
+            // Set up final confirm button
+            document.getElementById('finalConfirmBtn').onclick = function() {
+                const confirmMsg = document.getElementById('confirmationMessage').value;
+                if(!confirmMsg || confirmMsg.trim() === '') {
+                    alert('Please paste your payment confirmation message.');
+                    return;
+                }
+                
+                const originalText = this.innerHTML;
+                this.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...`;
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    this.innerHTML = `<svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Successfully Sent`;
+                    this.classList.replace('bg-blue-600', 'bg-green-500');
+                    this.classList.replace('hover:bg-blue-700', 'hover:bg-green-600');
+                    
+                    setTimeout(() => {
+                        popup.classList.add('hidden');
+                        showReceipt(true, 'Payment received successfully. Your loan is being processed.', reference);
+                    }, 1500);
+                }, 2000);
             };
-            localStorage.setItem('swift_submission', JSON.stringify(submissionData));
             
-            // Disable the button
-            event.target.disabled = true;
-            event.target.textContent = 'Submitted';
+            document.getElementById('cancelVerifyBtn').onclick = function() {
+                popup.classList.add('hidden');
+                showReceipt(false, 'Verification cancelled. Please try again.', reference);
+            };
+        }
+        
+        function showReceipt(isSuccess, message, reference) {
+            document.getElementById('processingSection').style.display = 'none';
+            document.getElementById('mainPaymentUI').style.display = 'none';
+            
+            const receipt = document.getElementById('receiptSection');
+            receipt.style.display = 'block';
+            
+            if(isSuccess) {
+                receipt.classList.remove('failed');
+                receipt.classList.add('success');
+                document.getElementById('receiptIcon').innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+                document.getElementById('receiptStatus').textContent = 'SUCCESS';
+                document.getElementById('receiptStatus').className = 'text-xl font-bold mb-1 text-green-600';
+                document.getElementById('retryBtn').classList.add('hidden');
+                
+                // Save state and update header balance
+                localStorage.setItem('swift_fee_paid', 'true');
+                document.getElementById('headerBalance').textContent = parseFloat(currentOffer.amount).toLocaleString('en-US', {minimumFractionDigits: 2});
+            } else {
+                receipt.classList.remove('success');
+                receipt.classList.add('failed');
+                document.getElementById('receiptIcon').innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                document.getElementById('receiptStatus').textContent = 'FAILED';
+                document.getElementById('receiptStatus').className = 'text-xl font-bold mb-1 text-red-600';
+                document.getElementById('retryBtn').classList.remove('hidden');
+            }
+            
+            document.getElementById('receiptMessage').textContent = message;
+            document.getElementById('recRef').textContent = reference;
+            document.getElementById('recAmount').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('recNetwork').textContent = currentNetwork;
+        }
+        
+        const retryBtn = document.getElementById('retryBtn');
+        if (retryBtn) {
+            retryBtn.addEventListener('click', () => {
+                document.getElementById('receiptSection').style.display = 'none';
+                document.getElementById('mainPaymentUI').style.display = 'block';
+            });
+        }
+        
+        // Hamburger Menu handling (replicated from offers.html logic)
+        function setupMenuHandlers() {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const closeSidebar = document.getElementById('closeSidebar');
+            
+            if(hamburger) {
+                hamburger.addEventListener('click', () => {
+                    sidebar.classList.add('active');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            function closeSidebarMenu() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            if(closeSidebar) closeSidebar.addEventListener('click', closeSidebarMenu);
+            if(overlay) overlay.addEventListener('click', closeSidebarMenu);
+            
+            const notificationBtn = document.getElementById('notificationBtn');
+            const notificationDropdown = document.getElementById('notificationDropdown');
+            if(notificationBtn) {
+                notificationBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    notificationDropdown.classList.toggle('active');
+                });
+            }
+            
+            document.addEventListener('click', (e) => {
+                if (notificationDropdown && !notificationDropdown.contains(e.target) && e.target !== notificationBtn) {
+                    notificationDropdown.classList.remove('active');
+                }
+            });
+        }
+        
+        function openPage(pageId) {
+            const modal = document.getElementById('page-' + pageId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if(document.getElementById('sidebar').classList.contains('active')) {
+                    document.getElementById('sidebar').classList.remove('active');
+                    document.getElementById('overlay').classList.remove('active');
+                }
+            }
+        }
+
+        function closePage(pageId) {
+            const modal = document.getElementById('page-' + pageId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         }
     </script>
-
 </body>
-    </html>
-
+ </html>
