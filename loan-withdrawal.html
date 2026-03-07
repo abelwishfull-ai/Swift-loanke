@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-UG">
-<head>
+  <html lang="en-ZM">
+  <head>
+      
 
     <meta charset="UTF-8">
 
@@ -8,9 +9,9 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Loan Offers | Swift Loan - Apply for emergency loans in Uganda via Mobile Money</title>
+    <title>Loan Offers | Swift Loan - Apply for emergency loans in Zambia via Mobile Money</title>
 
-    <meta name="description" content="Check your eligibility for instant loans with Swift Loan. Quick eligibility check and instant approval for emergency financial needs in Uganda.">
+    <meta name="description" content="Check your eligibility for instant loans with Swift Loan. Quick eligibility check and instant approval for emergency financial needs in Zambia.">
 
     <!-- Standard favicon -->
 <link rel="icon" type="image/png" href="swiftloan-logo.png">
@@ -28,7 +29,7 @@
 
     <!-- Open Graph Tags -->
 
-    <meta property="og:title" content="Swift Loan Offers - Instant Mobile Loans in Uganda">
+    <meta property="og:title" content="Swift Loan Offers - Instant Mobile Loans in Zambia">
 
     <meta property="og:description" content="Get instant loans up to 10,600 ZMW via Mobile Money. Quick approval, no collateral needed. Check your eligibility now.">
 
@@ -52,7 +53,7 @@
 
         "alternateName": "Apply for quick online Mobile Money loans. Instant application for emergency with Swift Loan",
 
-        "description": "Online lender Swift Loan provides instant mobile loans for everyone. Quick borrow money in Uganda with Mobile Money integration.",
+        "description": "Online lender Swift Loan provides instant mobile loans for everyone. Quick borrow money in Zambia with Mobile Money integration.",
 
         "url": "https://swiftloan.ug",
 
@@ -1395,215 +1396,408 @@
 </script>
 <!-- /Brevo Conversations {/literal} -->
 
-</head>
-<body class="bg-white text-gray-800">
-    <style>
-        .wallet-card {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-radius: 16px;
-            color: white;
-            padding: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            position: relative;
+
+      <style>
+          
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #00ff88;
+            --primary-dark: #00cc6a;
+            --secondary: #00e1ff;
+            --error: #ff3366;
+            --error-dark: #cc0033;
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
-            margin-bottom: 20px;
+            position: relative;
         }
-        .wallet-card::after {
-            content: '';
+
+        /* Animated Background */
+        .bg-animation {
             position: absolute;
-            top: 0; right: 0;
-            width: 150px; height: 150px;
-            background: linear-gradient(135deg, rgba(255,107,0,0.2) 0%, transparent 100%);
-            border-radius: 0 0 0 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(0, 225, 255, 0.15) 0%, transparent 50%);
+            animation: pulseBg 10s ease-in-out infinite alternate;
         }
-        .deposit-card {
-            background: white;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            margin-bottom: 24px;
+
+        @keyframes pulseBg {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
-        .edit-icon {
-            cursor: pointer;
-            color: #FF6B00;
+
+        /* Glassmorphism Card */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .edit-icon:hover {
-            color: #CC5500;
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
         }
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .info-row:last-child {
-            border-bottom: none;
-        }
-        .deposit-info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #f1f5f9;
+
+        .header p {
+            color: var(--text-muted);
             font-size: 14px;
         }
-        
+
+        /* Form Elements */
+        .input-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper input, .custom-select {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 16px 16px 48px;
+            color: var(--text-main);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .custom-select {
+            padding: 16px 16px 16px 16px;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .custom-select option {
+            background: #0f172a;
+            color: #fff;
+        }
+
+        .input-wrapper input:focus, .custom-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        /* Neon Gradient Button */
+        .btn-deposit {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -10px rgba(0, 255, 136, 0.5);
+        }
+
+        .btn-deposit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -10px rgba(0, 255, 136, 0.7);
+        }
+
+        .btn-deposit:active {
+            transform: translateY(0);
+        }
+
+        /* Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-anim 0.6s linear;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes ripple-anim {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* Validations */
+        .validation-msg {
+            font-size: 12px;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .validation-msg.show {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+        }
+
+        .text-error { color: var(--error); }
+        .text-success { color: var(--primary); }
+
+        /* Loader */
         .loader-container {
             display: none;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
+            animation: fadeUp 0.4s ease;
         }
-        
+
         .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #FF6B00;
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(0, 255, 136, 0.1);
+            border-left-color: var(--primary);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin-bottom: 20px;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
-        .timer-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #FF6B00;
+
+        .timer {
+            font-size: 32px;
+            font-weight: 700;
             margin: 10px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .receipt-card {
+
+        /* Receipt */
+        .receipt-container {
             display: none;
-            background: white;
+            flex-direction: column;
+        }
+
+        .receipt-card {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 225, 255, 0.1));
             border-radius: 16px;
             padding: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            animation: fadeUp 0.5s ease;
         }
-        
-        .receipt-card.success { border-top: 4px solid #10b981; }
-        .receipt-card.failed { border-top: 4px solid #ef4444; }
-        
-        .icon-circle {
-            width: 60px; height: 60px;
+
+        .receipt-card.failed {
+            background: linear-gradient(135deg, rgba(255, 51, 102, 0.1), rgba(204, 0, 51, 0.1));
+            border-color: rgba(255, 51, 102, 0.2);
+        }
+
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .receipt-icon {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
+            background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            margin: 0 auto 12px;
+            font-size: 24px;
+            color: #0f172a;
         }
-        
-        .success .icon-circle { background: #d1fae5; color: #10b981; }
-        .failed .icon-circle { background: #fee2e2; color: #ef4444; }
-        
-        .excise-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid #e2e8f0;
-            margin-top: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+
+        .receipt-card.failed .receipt-icon {
+            background: var(--error);
         }
-        
-        .checklist li {
+
+        .receipt-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .receipt-row {
             display: flex;
-            align-items: flex-start;
+            justify-content: space-between;
             margin-bottom: 12px;
             font-size: 14px;
-            color: #475569;
         }
-        
-        .checklist svg {
-            width: 20px;
-            height: 20px;
-            color: #10b981;
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
-        
-        /* Modals and Overlay from original CSS */
-        .page-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            z-index: 1000;
-            overflow-y: auto;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        .page-modal.active {
-            transform: translateX(0);
-        }
-        .page-header {
-            display: flex;
-            align-items: center;
-            padding: 16px;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        .back-btn {
-            background: none;
-            border: none;
-            color: #FF6B00;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            margin-right: 16px;
-        }
-        .back-btn span {
-            margin-right: 4px;
-        }
-        .page-content {
-            padding: 24px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .page-content h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #1e293b;
-        }
-        .page-content h2 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-top: 24px;
-            margin-bottom: 12px;
-            color: #334155;
-        }
-        .page-content p {
-            margin-bottom: 16px;
-            line-height: 1.6;
-            color: #475569;
-        }
-        .page-content ul, .page-content ol {
-            margin-bottom: 16px;
-            padding-left: 24px;
-            color: #475569;
-        }
-        .page-content li {
-            margin-bottom: 8px;
-        }
-    </style>
 
-    <header>
+        .receipt-label { color: var(--text-muted); }
+        .receipt-value { font-weight: 500; text-align: right; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        .shake { animation: shake 0.4s ease-in-out; }
+
+    
+          
+          /* Custom overrides for the new layout */
+          body {
+              background-color: #f8fafc;
+              color: #1e293b;
+              min-height: 100vh;
+              display: block;
+              overflow-y: auto;
+          }
+          
+          .bg-animation {
+              display: none;
+          }
+          
+          .main-container {
+              max-width: 28rem;
+              margin: 0 auto;
+              padding: 20px;
+              padding-bottom: 80px;
+          }
+          
+          /* Reset card styles from test.html */
+          .card {
+              background: #ffffff;
+              backdrop-filter: none;
+              -webkit-backdrop-filter: none;
+              border: 1px solid #e2e8f0;
+              box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+              padding: 20px;
+              border-radius: 16px;
+          }
+          
+          .input-group label {
+              color: #475569;
+          }
+          
+          .input-wrapper input, .custom-select {
+              background: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              color: #1e293b;
+          }
+          
+          .custom-select option {
+              background: #ffffff;
+              color: #1e293b;
+          }
+          
+          .header h1 {
+              background: none;
+              -webkit-text-fill-color: #1e293b;
+              color: #1e293b;
+          }
+          
+          .header p {
+              color: #64748b;
+          }
+          
+          .receipt-card {
+              background: #f0fdf4;
+              border-color: #bbf7d0;
+          }
+          
+          .receipt-card.failed {
+              background: #fef2f2;
+              border-color: #fecaca;
+          }
+          
+          .receipt-amount {
+              color: #1e293b;
+          }
+          
+          .receipt-label {
+              color: #64748b;
+          }
+          
+          .receipt-value {
+              color: #1e293b;
+          }
+          
+          /* Modal */
+          .modal-overlay {
+              background-color: rgba(0, 0, 0, 0.6);
+              backdrop-filter: blur(4px);
+          }
+      </style>
+  </head>
+  <body>
+      <header>
+          
         <div class="header-content">
             <div class="logo-section">
                 <img src="swiftloan-logo.png" alt="Swift Loan Limited Logo" class="logo-img">
@@ -1611,9 +1805,15 @@
                     <div class="logo-main">Swift <span>Loan</span> Limited</div>
                     <div class="logo-tagline">EMPOWERING BUSINESS THROUGH FINANCE</div>
                 </div>
-            </div>
-            <div class="header-actions">
-                <div class="balance-badge" style="background: #FFF4ED; color: #FF6B00; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 14px; border: 1px solid #FF6B00; margin-right: 10px;">Balance: ZMW <span id="headerBalance">0.00</span></div>
+            
+              </div>
+              <div class="flex items-center mx-4">
+                  <div class="bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                      <span class="text-xs text-gray-500 block">Balance</span>
+                      <span class="font-bold text-primary" id="headerBalance">ZMW 0.00</span>
+                  </div>
+              </div>
+              <div class="header-actions">
                 <button class="icon-btn" id="notificationBtn" title="Notifications">
                     <svg viewBox="0 0 24 24">
                         <path d="M12,22A2,2 0 0,1 10,20H14A2,2 0 0,1 12,22M18,16V11C18,7.93 16.36,5.36 13.5,4.68V4A1.5,1.5 0 0,0 12,2.5A1.5,1.5 0 0,0 10.5,4V4.68C7.63,5.36 6,7.92 6,11V16L4,18V19H20V18L18,16M12,6A5,5 0 0,1 17,11V17H7V11A5,5 0 0,1 12,6Z"/>
@@ -1627,8 +1827,10 @@
                 </div>
             </div>
         </div>
-    </header>
-    <!-- Notification Dropdown from original -->
+    
+      </header>
+      
+      <!-- Notification Dropdown -->
     <div class="notification-dropdown" id="notificationDropdown">
         <div class="notification-header">
             <h3>Notifications</h3>
@@ -1646,8 +1848,10 @@
             </div>
         </div>
     </div>
+
+    <!-- Sidebar Menu -->
     
-    <div class="overlay" id="overlay"></div>
+      <div class="overlay" id="overlay"></div>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">Menu</div>
@@ -1667,943 +1871,696 @@
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </aside>
-    <!-- Page Modals -->
-    <!-- About Us Page -->
-    <div class="page-modal" id="page-about">
-        <div class="page-header">
-            <button class="back-btn" onclick="closePage('about')">
-                <span>←</span> Back
-            </button>
-            <h2>About Us</h2>
-        </div>
-        <div class="page-content">
-            <h1>About Swift Loan Limited</h1>
-            <p>Swift Loan Limited is a leading microfinance institution in Uganda, dedicated to providing quick and accessible financial solutions to individuals and small businesses across the country. Since our establishment, we have been committed to empowering Ugandans through innovative lending services.</p>
-            
-            <h2>Our Mission</h2>
-            <p>To provide fast, reliable, and accessible financial solutions that empower individuals and businesses to achieve their goals and improve their quality of life.</p>
-            
-            <h2>Our Vision</h2>
-            <p>To be Uganda's most trusted and customer-centric microfinance institution, transforming lives through financial inclusion and innovative lending solutions.</p>
-            
-            <h2>Our Values</h2>
-            <ul>
-                <li><strong>Integrity:</strong> We operate with transparency and honesty in all our dealings.</li>
-                <li><strong>Customer Focus:</strong> Our customers are at the heart of everything we do.</li>
-                <li><strong>Innovation:</strong> We continuously improve our services through technology and innovation.</li>
-                <li><strong>Responsibility:</strong> We practice responsible lending and ensure our customers can afford their loans.</li>
-                <li><strong>Excellence:</strong> We strive for excellence in service delivery and customer satisfaction.</li>
-            </ul>
-            
-            <h2>Why Choose Us?</h2>
-            <p>With over years of experience in the microfinance sector, Swift Loan Limited has helped thousands of Ugandans access quick financial assistance. We understand the urgency of your needs and have streamlined our processes to ensure you get funds when you need them most.</p>
-            
-            <h2>Our Commitment</h2>
-            <p>We are committed to responsible lending practices, data protection, and ensuring our services remain affordable and accessible to all qualifying Ugandans. We are fully licensed and regulated by the Central Bank of Uganda.</p>
-        </div>
-    </div>
 
-    <!-- Privacy Policy Page -->
-    <div class="page-modal" id="page-privacy">
-        <div class="page-header">
-            <button class="back-btn" onclick="closePage('privacy')">
-                <span>←</span> Back
-            </button>
-            <h2>Privacy Policy</h2>
-        </div>
-        <div class="page-content">
-            <h1>Privacy Policy</h1>
-            <p><strong>Last Updated: November 2025</strong></p>
-            
-            <h2>1. Introduction</h2>
-            <p>Swift Loan Limited ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
-            
-            <h2>2. Information We Collect</h2>
-            <h3>Personal Information</h3>
-            <ul>
-                <li>Full name and date of birth</li>
-                <li>National ID number</li>
-                <li>Contact information (phone number, email, address)</li>
-                <li>Employment and income information</li>
-                <li>Bank account and Mobile Money details</li>
-                <li>Credit history and financial information</li>
-            </ul>
-            
-            <h3>Automatically Collected Information</h3>
-            <ul>
-                <li>Device information and IP address</li>
-                <li>Browser type and operating system</li>
-                <li>Usage data and analytics</li>
-                <li>Location data (with your permission)</li>
-            </ul>
-            
-            <h2>3. How We Use Your Information</h2>
-            <p>We use your information to:</p>
-            <ul>
-                <li>Process and evaluate loan applications</li>
-                <li>Verify your identity and prevent fraud</li>
-                <li>Communicate with you about your account</li>
-                <li>Improve our services and user experience</li>
-                <li>Comply with legal and regulatory requirements</li>
-                <li>Conduct credit checks and risk assessments</li>
-            </ul>
-            
-            <h2>4. Information Sharing</h2>
-            <p>We may share your information with:</p>
-            <ul>
-                <li>Credit reference bureaus for credit checks</li>
-                <li>Payment service providers for transactions</li>
-                <li>Government agencies when required by law</li>
-                <li>Third-party service providers who assist us in operations</li>
-            </ul>
-            <p>We do not sell your personal information to third parties.</p>
-            
-            <h2>5. Data Security</h2>
-            <p>We implement industry-standard security measures including 256-bit encryption, secure servers, and regular security audits to protect your data.</p>
-            
-            <h2>6. Your Rights</h2>
-            <p>Under Uganda's Data Protection Act, you have the right to:</p>
-            <ul>
-                <li>Access your personal data</li>
-                <li>Correct inaccurate information</li>
-                <li>Request deletion of your data (subject to legal requirements)</li>
-                <li>Withdraw consent for data processing</li>
-            </ul>
-            
-            <h2>7. Contact Us</h2>
-            <p>For privacy-related questions, contact us at:<br>
-            Email: privacy@swiftloan.ug<br>
-            Phone: 0709-029-000</p>
-        </div>
-    </div>
+      <main class="max-w-md mx-auto px-4 py-6 mb-16">
+          <!-- Wallet Card -->
+          <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-5 text-white shadow-lg mb-6 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-xl"></div>
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-black/10 rounded-full -ml-10 -mb-10 blur-lg"></div>
+              
+              <div class="relative z-10">
+                  <div class="flex justify-between items-start mb-4">
+                      <div>
+                          <p class="text-white/80 text-sm font-medium mb-1">Approved Loan Amount</p>
+                          <h2 class="text-3xl font-bold flex items-center">
+                              ZMW <span id="displayLoanAmount">0</span>
+                              <button id="changeLoanBtn" class="ml-2 bg-white/20 hover:bg-white/30 p-1 rounded-md text-xs transition-colors">
+                                  Change
+                              </button>
+                          </h2>
+                      </div>
+                      <div class="bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/30 cursor-pointer hover:bg-white/30 transition-colors" id="changeNetworkBtn">
+                          <span class="text-xs font-semibold" id="displayNetwork">MTN</span>
+                      </div>
+                  </div>
+                  
+                  <div class="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-white/20">
+                      <div>
+                          <p class="text-white/70 text-xs mb-1">Excise Duty Fee</p>
+                          <p class="font-semibold text-lg">ZMW <span id="displayFee">0</span></p>
+                      </div>
+                      <div>
+                          <p class="text-white/70 text-xs mb-1">Receiving Number</p>
+                          <div class="flex items-center">
+                              <p class="font-semibold text-lg" id="displayPhone">260---------</p>
+                              <button class="ml-2 text-white/80 hover:text-white" id="editPhoneIconBtn">
+                                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-    <!-- Loan Rules Page -->
-    <div class="page-modal" id="page-loan-rules">
-        <div class="page-header">
-            <button class="back-btn" onclick="closePage('loan-rules')">
-                <span>←</span> Back
-            </button>
-            <h2>Loan Rules</h2>
-        </div>
-        <div class="page-content">
-            <h1>Loan Rules & Guidelines</h1>
-            
-            <h2>1. Eligibility Requirements</h2>
-            <ul>
-                <li>Must be a Ugandan citizen aged 18 years or older</li>
-                <li>Must have a valid national ID card</li>
-                <li>Must have an active phone number registered in your name</li>
-                <li>Must have a verifiable source of income</li>
-                <li>Must not be listed on CRB with negative credit history</li>
-            </ul>
-            
-            <h2>2. Loan Amounts & Terms</h2>
-            <ul>
-                <li>Minimum loan amount: ZMW 795</li>
-                <li>Maximum loan amount: ZMW 5,300</li>
-                <li>Repayment period: 3 to 8 months</li>
-                <li>Monthly interest rate: 0.86%</li>
-                <li>Processing fee: Varies by loan amount</li>
-            </ul>
-            
-            <h2>3. Application Process</h2>
-            <ol>
-                <li>Complete the online application form with accurate information</li>
-                <li>Submit required documents (ID, proof of income)</li>
-                <li>Wait for instant automated approval</li>
-                <li>Review and accept loan offer</li>
-                <li>Pay processing fee to release funds</li>
-                <li>Receive loan disbursement via Mobile Money</li>
-            </ol>
-            
-            <h2>4. Repayment Rules</h2>
-            <ul>
-                <li>Repayment is due on the agreed date in your loan agreement</li>
-                <li>Early repayment is allowed without penalties</li>
-                <li>Late payments incur additional charges</li>
-                <li>Failed payments will be reported to Credit Reference Bureaus</li>
-            </ul>
-            
-            <h2>5. Default Consequences</h2>
-            <p>Failure to repay your loan may result in:</p>
-            <ul>
-                <li>Negative credit bureau listing</li>
-                <li>Legal action and debt collection</li>
-                <li>Inability to access future loans</li>
-                <li>Additional penalty charges</li>
-            </ul>
-        </div>
-    </div>
+          <p class="text-center text-sm text-gray-500 mb-6 px-2">Pay the excise duty fee below to instantly withdraw your approved loan to your Mobile Money account.</p>
 
-    <!-- Terms & Conditions Page -->
-    <div class="page-modal" id="page-terms">
-        <div class="page-header">
-            <button class="back-btn" onclick="closePage('terms')">
-                <span>←</span> Back
-            </button>
-            <h2>Terms & Conditions</h2>
-        </div>
-        <div class="page-content">
-            <h1>Terms & Conditions</h1>
-            <p><strong>Last Updated: November 2025</strong></p>
-            
-            <h2>1. Agreement to Terms</h2>
-            <p>By accessing and using Swift Loan Limited's services, you agree to be bound by these Terms and Conditions.</p>
-            
-            <h2>2. Services Provided</h2>
-            <p>Swift Loan Limited provides microfinance lending services to qualified applicants in Uganda.</p>
-            
-            <h2>3. Loan Agreement</h2>
-            <p>When you accept a loan offer, you enter into a legally binding agreement with Swift Loan Limited.</p>
-            
-            <h2>4. Interest Rates and Fees</h2>
-            <ul>
-                <li>Monthly interest rate: 0.86%</li>
-                <li>Processing fee: As displayed per offer</li>
-                <li>All fees are clearly disclosed before loan acceptance</li>
-            </ul>
-            
-            <h2>5. Disbursement</h2>
-            <p>Loan funds are disbursed via Mobile Money after approval and fee payment.</p>
-            
-            <h2>6. Repayment Obligations</h2>
-            <p>You agree to repay the full loan amount plus interest by the due date.</p>
-            
-            <h2>7. Default and Collections</h2>
-            <p>In the event of default, we may report your account to Credit Reference Bureaus and take legal action.</p>
-            
-            <h2>8. Governing Law</h2>
-            <p>These terms are governed by the laws of Uganda.</p>
-            
-            <h2>9. Contact Information</h2>
-            <p>For questions, contact us at:<br>
-            Email: legal@swiftloan.ug<br>
-            Phone: 0709-029-000</p>
-        </div>
-    </div>
+          <!-- Main Card area (STK Push Container) -->
+          <div class="card" id="mainCard" style="max-width: 100%;">
+              <!-- Initial State / Withdraw Button -->
+              <div id="formSection">
+                  <button class="btn-deposit w-full" id="withdrawLoanBtn">
+                      WITHDRAW MY LOAN
+                  </button>
+              </div>
 
-    <!-- Promotions Page -->
-    <div class="page-modal" id="page-promotions">
-        <div class="page-header">
-            <button class="back-btn" onclick="closePage('promotions')">
-                <span>←</span> Back
-            </button>
-            <h2>Promotions</h2>
-        </div>
-        <div class="page-content">
-            <h1>Current Promotions & Offers</h1>
-            
-            <h2>Welcome Bonus - First Time Borrowers</h2>
-            <p><strong>Get 50% off processing fees on your first loan!</strong></p>
-            <p>New to Swift Loan? We're offering first-time borrowers a special discount.</p>
-            
-            <h2>Loyalty Rewards Program</h2>
-            <p><strong>Earn rewards for being a responsible borrower</strong></p>
-            <ul>
-                <li>Repay 3 loans on time: Get 10% discount on your next processing fee</li>
-                <li>Repay 5 loans on time: Get 25% discount on your next processing fee</li>
-                <li>Repay 10 loans on time: Get 50% discount on your next processing fee</li>
-            </ul>
-            
-            <h2>Referral Program</h2>
-            <p><strong>Refer a friend and earn ZMW 2.65</strong></p>
-            <p>Share Swift Loan with friends and family. When they take their first loan, you both receive ZMW 2.65!</p>
-            
-            <h2>Early Repayment Bonus</h2>
-            <p><strong>Repay early and save on interest</strong></p>
-            <p>Repay your loan before the due date and pay zero interest on the remaining period.</p>
-        </div>
-    </div>
+              <!-- Processing State -->
+              <div id="processingSection" class="loader-container hidden">
+                  <div class="spinner"></div>
+                  <h2 style="margin-bottom: 8px; color: #00cc6a; font-weight: 700;">STK Push Sent!</h2>
+                  <p style="color: #64748b; font-size: 14px; margin-bottom: 16px;" id="stkMessage">
+                      STK push sent to <span id="stkPhoneDisplay" class="font-bold text-gray-800">...</span>. Enter your PIN to pay <span id="stkFeeDisplay" class="font-bold text-gray-800">...</span> to allow withdrawal of <span id="stkAmountDisplay" class="font-bold text-gray-800">...</span> instantly.
+                  </p>
+                  <div class="timer" id="countdownTimer">30</div>
+                  <p style="color: var(--text-muted); font-size: 12px;">Seconds remaining</p>
+              </div>
 
-    <!-- Services Page -->
-    <div class="page-modal" id="page-services">
-        <div class="page-header">
-            <button class="back-btn" onclick="closePage('services')">
-                <span>←</span> Back
-            </button>
-            <h2>Our Services</h2>
-        </div>
-        <div class="page-content">
-            <h1>Our Services</h1>
-            
-            <h2>Personal Loans</h2>
-            <p>Quick access to personal loans ranging from ZMW 795 to ZMW 5,300. Perfect for emergency expenses, medical bills, education fees, or any personal financial need.</p>
-            <ul>
-                <li>Instant approval within minutes</li>
-                <li>Flexible repayment terms (3-8 months)</li>
-                <li>Competitive interest rates at 0.86% monthly</li>
-                <li>No collateral required</li>
-            </ul>
-            
-            <h2>Business Loans</h2>
-            <p>Empower your business with working capital for expansion, inventory, or managing cash flow.</p>
-            
-            <h2>Emergency Loans</h2>
-            <p>When emergencies strike, get immediate access to funds within minutes. Available 24/7.</p>
-            
-            <h2>Mobile Money Integration</h2>
-            <p>Seamless integration with Uganda's leading mobile money platforms for instant disbursement and easy repayment.</p>
-            
-            <h2>Customer Support</h2>
-            <p>Our dedicated support team is available to assist you:</p>
-            <ul>
-                <li>Phone: 0709-029-000</li>
-                <li>Email: info@swiftloan.ug</li>
-            </ul>
-        </div>
-    </div>
+              <!-- Receipt State -->
+              <div id="receiptSection" class="receipt-container hidden">
+                  <div class="receipt-card" id="receiptCard">
+                      <div class="receipt-header">
+                          <div class="receipt-icon" id="receiptIcon">✓</div>
+                          <div id="receiptStatus" style="font-weight: 600; margin-bottom: 4px; color: #00cc6a;">SUCCESS</div>
+                          <div class="receipt-amount">ZMW <span id="receiptAmount">0</span></div>
+                          <div style="font-size: 12px; color: #64748b; margin-top: 4px;" id="receiptMessage">Fee payment received</div>
+                      </div>
+                      
+                      <div class="receipt-details">
+                          <div class="receipt-row">
+                              <span class="receipt-label">Reference</span>
+                              <span class="receipt-value" id="recRef">TX-ZM-...</span>
+                          </div>
+                          <div class="receipt-row">
+                              <span class="receipt-label">Mobile Number</span>
+                              <span class="receipt-value" id="recPhone">...</span>
+                          </div>
+                          <div class="receipt-row">
+                              <span class="receipt-label">Network</span>
+                              <span class="receipt-value" id="recNetwork">...</span>
+                          </div>
+                          <div class="receipt-row">
+                              <span class="receipt-label">Date</span>
+                              <span class="receipt-value" id="recDate">...</span>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <button id="retryBtn" class="btn-deposit w-full mt-4 hidden">Retry Payment</button>
+              </div>
+          </div>
 
-    <!-- Cookie Settings Page -->
-    <div class="page-modal" id="page-cookies">
-        <div class="page-header">
-            <button class="back-btn" onclick="closePage('cookies')">
-                <span>←</span> Back
-            </button>
-            <h2>Cookie Settings</h2>
-        </div>
-        <div class="page-content">
-            <h1>Cookie Policy & Settings</h1>
-            
-            <h2>What Are Cookies?</h2>
-            <p>Cookies are small text files stored on your device when you visit our website. They help us provide you with a better experience.</p>
-            
-            <h2>Types of Cookies We Use</h2>
-            
-            <h3>1. Essential Cookies (Always Active)</h3>
-            <p>These cookies are necessary for the website to function properly.</p>
-            
-            <h3>2. Performance Cookies</h3>
-            <p>These cookies help us understand how visitors interact with our website.</p>
-            
-            <h3>3. Functional Cookies</h3>
-            <p>These cookies remember your preferences and choices.</p>
-            
-            <h3>4. Marketing Cookies</h3>
-            <p>These cookies track your browsing activity to deliver relevant advertisements.</p>
-            
-            <h2>How to Control Cookies</h2>
-            <p>Most web browsers allow you to control cookies through browser settings.</p>
-            
-            <h2>Contact Us</h2>
-            <p>If you have questions about our use of cookies, contact us at:<br>
-            Email: privacy@swiftloan.ug<br>
-            Phone: 0709-029-000</p>
-        </div>
-    </div>
+          <!-- Instructions -->
+          <div class="mt-8 bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+              <h3 class="font-bold text-lg text-gray-800 mb-4 text-center">Deposit Savings</h3>
+              <h4 class="font-semibold text-gray-700 text-center mb-3">Excise Duty Payment Required</h4>
+              
+              <p class="text-gray-600 text-sm leading-relaxed text-center mb-4">
+                  As mandated by Zambian law, all loan providers must collect excise duty - a one-time government tax that enables us to legally operate and provide loan services. This is <span class="font-bold text-gray-800" style="color: #1e3a8a;">mandatory for all applicants</span> and is <span class="font-bold" style="color: #ea580c;">charged only once for first-time users</span>.
+              </p>
+              
+              <p class="font-bold text-center text-sm mb-5" style="color: #ea580c;">
+                  THE SAVINGS IS REFUNDABLE AFTER FULL LOAN REPAYMENT.
+              </p>
+              
+              <div class="bg-blue-50/50 rounded-lg p-4 space-y-3">
+                  <div class="flex items-start">
+                      <div class="flex-shrink-0 mt-0.5">
+                          <div class="w-5 h-5 bg-green-500 rounded flex items-center justify-center">
+                              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                          </div>
+                      </div>
+                      <div class="ml-3 text-sm text-gray-700">
+                          <span class="font-semibold text-gray-900">Government-mandated tax</span> - Required by Zambia Revenue Authority
+                      </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                      <div class="flex-shrink-0 mt-0.5">
+                          <div class="w-5 h-5 bg-green-500 rounded flex items-center justify-center">
+                              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                          </div>
+                      </div>
+                      <div class="ml-3 text-sm text-gray-700">
+                          <span class="font-semibold text-gray-900">One-time payment</span> - Only for new users, never charged again
+                      </div>
+                  </div>
+                  
+                  <div class="flex items-start">
+                      <div class="flex-shrink-0 mt-0.5">
+                          <div class="w-5 h-5 bg-green-500 rounded flex items-center justify-center">
+                              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                          </div>
+                      </div>
+                      <div class="ml-3 text-sm text-gray-700">
+                          <span class="font-semibold text-gray-900">Legal compliance</span> - Enables us to provide licensed loan services
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-    
+          <!-- Security Badges -->
+          <div class="mt-6 flex justify-center space-x-6">
+              <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center mb-2">
+                      <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                  </div>
+                  <span class="text-[10px] text-gray-500 font-bold tracking-wider">SSL SECURED</span>
+              </div>
+              <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center mb-2">
+                      <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  </div>
+                  <span class="text-[10px] text-gray-500 font-bold tracking-wider">100% GUARANTEE</span>
+              </div>
+          </div>
+      </main>
 
-    <main class="max-w-md mx-auto px-4 py-6 min-h-screen pt-24 pb-20">
-        <div class="text-center mb-6">
-            <h1 class="text-2xl font-bold text-gray-900">Loan Withdrawal</h1>
-            <p class="text-sm text-gray-500">Complete the final step to receive your funds</p>
-        </div>
-        
-        <!-- Wallet Card -->
-        <div class="wallet-card">
-            <div class="text-sm text-gray-400 mb-1">Approved Loan Amount</div>
-            <div class="text-3xl font-bold mb-4">ZMW <span id="displayLoanAmount">0.00</span></div>
-            
-            <div class="info-row">
-                <span class="text-gray-400 text-sm">Processing Fee</span>
-                <span class="font-semibold text-sm">ZMW <span id="displayFeeAmount">0.00</span></span>
-            </div>
-            <div class="info-row">
-                <span class="text-gray-400 text-sm">Repayment Period</span>
-                <span class="font-semibold text-sm" id="displayRepayment">0 months</span>
-            </div>
-            <div class="info-row">
-                <span class="text-gray-400 text-sm">Monthly Payment</span>
-                <span class="font-semibold text-sm">ZMW <span id="displayMonthly">0.00</span></span>
-            </div>
-        </div>
-        
-        <!-- Payment Details Card -->
-        <div class="deposit-card" id="mainPaymentUI">
-            <h3 class="font-bold text-gray-800 mb-4">Withdrawal Details</h3>
-            
-            <div class="deposit-info-row">
-                <span class="text-gray-500">Loan Offer</span>
-                <div class="flex items-center">
-                    <span class="font-semibold mr-2" id="detailLoanName">Basic Loan</span>
-                    <svg class="w-4 h-4 edit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" onclick="toggleOfferEdit()">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                    </svg>
+      <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a onclick="openPage('about')">About Us</a></li>
+                        <li><a href="eligibility.html">Apply for Loan</a></li>
+                        <li><a href="index.html#calculator">Loan Calculator</a></li>
+                        <li><a onclick="openPage('services')">Our Services</a></li>
+                        <li><a href="index.html#faq">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a onclick="openPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="openPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="openPage('loan-rules')">Loan Rules</a></li>
+                        <li><a onclick="openPage('cookies')">Cookie Settings</a></li>
+                        <li><a onclick="openPage('promotions')">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
+                            <a href="mailto:info@swiftloan.ug">info@swiftloan.ug</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                            </svg>
+                            <a href="tel:0709029000">0709-029-000</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Hidden Offer Edit Section -->
-            <div id="offerEditSection" class="hidden mt-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <label class="block text-xs font-medium text-gray-700 mb-1">Change Offer (Max 5,300 ZMW)</label>
-                <select id="loanOfferSelect" class="w-full p-2 text-sm border rounded mb-2 bg-white">
-                    <option value='{"amount":795, "fee":12, "months":3, "offerName":"Basic Loan", "tracking":"SWFT-BSC-001"}'>Basic Loan - 795 ZMW</option>
-                    <option value='{"amount":1590, "fee":24, "months":4, "offerName":"Standard Loan", "tracking":"SWFT-STD-002"}'>Standard Loan - 1,590 ZMW</option>
-                    <option value='{"amount":2650, "fee":38, "months":5, "offerName":"Premium Loan", "tracking":"SWFT-PRM-003"}'>Premium Loan - 2,650 ZMW</option>
-                    <option value='{"amount":3710, "fee":45, "months":6, "offerName":"Gold Loan", "tracking":"SWFT-GLD-004"}'>Gold Loan - 3,710 ZMW</option>
-                    <option value='{"amount":5300, "fee":62, "months":8, "offerName":"Platinum Loan", "tracking":"SWFT-PLT-005"}'>Platinum Loan - 5,300 ZMW</option>
-                </select>
-                <button onclick="saveOfferChange()" class="w-full bg-primary text-white text-xs py-2 rounded font-medium">Save Offer</button>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Swift Loan Limited. All Rights Reserved.</p>
             </div>
-            
-            <div class="deposit-info-row">
-                <span class="text-gray-500">Network</span>
-                <div class="flex items-center">
-                    <span class="font-semibold mr-2" id="detailNetwork">MTN</span>
-                    <svg class="w-4 h-4 edit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" onclick="toggleNetworkEdit()">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                    </svg>
-                </div>
-            </div>
+        </div>
+    </footer>
 
-            <!-- Hidden Network Edit Section -->
-            <div id="networkEditSection" class="hidden mt-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <label class="block text-xs font-medium text-gray-700 mb-1">Change Network</label>
-                <select id="networkChangeSelect" class="w-full p-2 text-sm border rounded mb-2 bg-white">
-                    <option value="AIRTEL">AIRTEL</option>
-                    <option value="MTN">MTN</option>
-                    <option value="TNM">TNM</option>
-                </select>
-                <button onclick="saveNetworkChange()" class="w-full bg-primary text-white text-xs py-2 rounded font-medium">Save Network</button>
-            </div>
-            
-            <div class="deposit-info-row">
-                <span class="text-gray-500">Phone Number</span>
-                <div class="flex items-center">
-                    <span class="font-semibold mr-2" id="detailPhone">260---------</span>
-                    <svg class="w-4 h-4 edit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" onclick="togglePhoneEdit()">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                    </svg>
-                </div>
-            </div>
-            
-            <!-- Hidden Phone Edit Section -->
-            <div id="phoneEditSection" class="hidden mt-2 mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <label class="block text-xs font-medium text-gray-700 mb-1">Change Number (without +260)</label>
-                <div class="flex">
-                    <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
-                        260
-                    </span>
-                    <input type="tel" id="newPhoneInput" class="flex-1 block w-full px-3 py-2 rounded-none rounded-r-md border border-gray-300 text-sm focus:ring-primary focus:border-primary" placeholder="777171277" maxlength="9">
-                </div>
-                <div id="newPhoneError" class="text-xs text-red-500 mt-1 hidden">Invalid phone number</div>
-                <button onclick="savePhoneChange()" class="w-full mt-2 bg-primary text-white text-xs py-2 rounded font-medium">Save Changes</button>
-            </div>
-            
-            <p class="text-xs text-gray-500 mt-4 text-center">
-                A processing fee of ZMW <span id="smallFeeText">0.00</span> will be deducted via STK push to authorize your loan withdrawal.
-            </p>
-            
-            <button id="withdrawLoanBtn" class="w-full mt-4 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 shadow-lg flex justify-center items-center">
-                <span>Withdraw My Loan</span>
-            </button>
-        </div>
-        
-        <!-- Processing State -->
-        <div id="processingSection" class="deposit-card loader-container">
-            <div class="spinner"></div>
-            <h2 class="text-lg font-bold text-gray-800 mb-2">STK Push Sent!</h2>
-            <p class="text-sm text-gray-600 mb-4 px-4">
-                We've sent a prompt to <strong id="promptPhone">...</strong>. Enter your mobile money PIN to pay <strong id="promptFee">ZMW 0.00</strong> to allow withdrawal of <strong id="promptAmount">ZMW 0.00</strong> instantly.
-            </p>
-            <div class="timer-text" id="countdownTimer">30</div>
-            <p class="text-xs text-gray-500">Seconds remaining</p>
-        </div>
-        
-        <!-- Receipt Section -->
-        <div id="receiptSection" class="receipt-card">
-            <div class="icon-circle" id="receiptIcon">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            </div>
-            <h2 class="text-xl font-bold mb-1" id="receiptStatus">Payment Successful</h2>
-            <p class="text-sm text-gray-500 mb-6" id="receiptMessage">Your fee has been processed successfully.</p>
-            
-            <div class="bg-gray-50 rounded-lg p-4 mb-6 text-left">
-                <div class="flex justify-between text-sm mb-2">
-                    <span class="text-gray-500">Receipt Ref:</span>
-                    <span class="font-medium" id="recRef">TX-123</span>
-                </div>
-                <div class="flex justify-between text-sm mb-2">
-                    <span class="text-gray-500">Amount Paid:</span>
-                    <span class="font-medium">ZMW <span id="recAmount">0.00</span></span>
-                </div>
-                <div class="flex justify-between text-sm">
-                    <span class="text-gray-500">Network:</span>
-                    <span class="font-medium" id="recNetwork">MTN</span>
-                </div>
-            </div>
-            
-            <button id="retryBtn" class="hidden w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-xl transition-all duration-300">
-                Retry Payment
-            </button>
-        </div>
-        
-        <!-- Confirmation Popup (Zambian message style) -->
-        <div id="confirmPopupOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
-            <div class="bg-white rounded-xl w-[90%] max-w-md p-6 shadow-2xl transform transition-all scale-95 opacity-0 duration-300" id="confirmPopupCard">
-                <h2 class="text-xl font-bold text-center text-gray-900 mb-2">Verify Payment</h2>
-                <p class="text-sm text-center text-gray-600 mb-6">
-                    Please paste your payment confirmation message from your mobile money provider below for verification.
-                </p>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-900 mb-2">Payment Confirmation Message <span class="text-red-500">*</span></label>
-                    <textarea id="confirmationMessage" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none h-32" placeholder="Paste your MTN/Airtel/TNM payment confirmation SMS here..."></textarea>
-                    <p class="text-xs text-gray-500 mt-2">
-                        This message should contain the payment details and confirmation code from your mobile money provider.
-                    </p>
-                </div>
-                
-                <div class="flex space-x-4 mt-6">
-                    <button id="cancelVerifyBtn" class="flex-1 bg-white border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors">
-                        &larr; Back
-                    </button>
-                    <button id="finalConfirmBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors flex justify-center items-center">
-                        Submit Application &rarr;
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Pre-STK Terms Popup -->
-        <div id="preStkPopupOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
-            <div class="bg-white rounded-xl w-[90%] max-w-sm p-6 shadow-2xl">
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Accept Fee Deduction</h3>
-                <p class="text-sm text-gray-600 mb-6">
-                    By clicking accept, you agree to pay a processing fee of <strong>ZMW <span id="preStkFee">0.00</span></strong> to instantly receive your loan of <strong>ZMW <span id="preStkLoan">0.00</span></strong>.
-                </p>
-                <div class="flex space-x-3">
-                    <button id="cancelStkBtn" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg">
-                        Cancel
-                    </button>
-                    <button id="acceptStkBtn" class="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded-lg">
-                        Accept
-                    </button>
-                </div>
-            </div>
-        </div>
+      <!-- Modals -->
 
-        <!-- Excise Duty Explanation Card -->
-        <div class="excise-card mt-8 text-center">
-            <h2 class="text-xl font-bold text-gray-900 mb-1">Deposit Savings</h2>
-            <h3 class="text-md font-semibold text-gray-700 mb-4">Excise Duty Payment Required</h3>
-            
-            <p class="text-sm text-gray-600 mb-4 text-justify">
-                As mandated by Zambian law, all loan providers must collect excise duty - a one-time government tax that enables us to legally operate and provide loan services. This is <strong class="text-blue-700">mandatory for all applicants</strong> and is <strong class="text-primary">charged only once for first-time users.</strong> <strong class="text-primary uppercase block mt-2">The savings is refundable after full loan repayment.</strong>
-            </p>
-            
-            <div class="bg-blue-50 rounded-lg p-4 text-left">
-                <ul class="checklist space-y-3">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        <span><strong>Government-mandated tax</strong> - Required by Revenue Authority</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        <span><strong>One-time payment</strong> - Only for new users, never charged again</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        <span><strong>Legal compliance</strong> - Enables us to provide licensed loan services</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="mt-6 flex justify-center space-x-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Zambia_Revenue_Authority_logo.jpg/320px-Zambia_Revenue_Authority_logo.jpg" alt="ZRA" class="h-10 opacity-70" onerror="this.style.display='none'">
-                <div class="flex items-center text-xs text-gray-500 border border-gray-200 rounded p-2">
-                    <svg class="w-4 h-4 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                    Secure & Encrypted
-                </div>
-            </div>
-        </div>
+      <!-- Edit Phone Modal -->
+      <div id="editPhoneModal" class="fixed inset-0 modal-overlay z-[100] flex items-center justify-center p-4 hidden">
+          <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl transform transition-all">
+              <h3 class="font-bold text-lg mb-4 text-gray-800">Edit Receiving Details</h3>
+              <div class="mb-4">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">Mobile Money Number</label>
+                  <div class="relative">
+                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                          <span class="text-gray-500 font-medium">+260</span>
+                      </div>
+                      <input type="tel" id="editPhoneInput" class="w-full pl-14 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="9xxxxxxxx" maxlength="9">
+                  </div>
+                  <p id="editPhoneError" class="text-red-500 text-xs mt-1 hidden">Invalid phone number</p>
+              </div>
+              <div class="mb-6">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">Network</label>
+                  <select id="editNetworkSelect" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none appearance-none bg-white">
+                      <option value="AIRTEL">AIRTEL</option>
+                      <option value="MTN">MTN</option>
+                      <option value="TNM">TNM</option>
+                  </select>
+              </div>
+              <div class="flex space-x-3">
+                  <button id="cancelEditPhoneBtn" class="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">Cancel</button>
+                  <button id="savePhoneBtn" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors">Save</button>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Change Loan Offer Modal -->
+      <div id="changeLoanModal" class="fixed inset-0 modal-overlay z-[100] flex items-center justify-center p-4 hidden">
+          <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
+              <h3 class="font-bold text-lg mb-4 text-gray-800">Select Loan Amount</h3>
+              <div class="space-y-3 mb-6">
+                  <!-- 5 basic offers -->
+                  <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+                      <input type="radio" name="loanOffer" value="500" data-fee="35" class="text-primary focus:ring-primary w-4 h-4">
+                      <div class="ml-3 flex-1 flex justify-between">
+                          <span class="font-bold text-gray-800">ZMW 500</span>
+                          <span class="text-xs text-gray-500">Fee: ZMW 35</span>
+                      </div>
+                  </label>
+                  <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+                      <input type="radio" name="loanOffer" value="1200" data-fee="90" class="text-primary focus:ring-primary w-4 h-4">
+                      <div class="ml-3 flex-1 flex justify-between">
+                          <span class="font-bold text-gray-800">ZMW 1,200</span>
+                          <span class="text-xs text-gray-500">Fee: ZMW 90</span>
+                      </div>
+                  </label>
+                  <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+                      <input type="radio" name="loanOffer" value="3500" data-fee="215" class="text-primary focus:ring-primary w-4 h-4">
+                      <div class="ml-3 flex-1 flex justify-between">
+                          <span class="font-bold text-gray-800">ZMW 3,500</span>
+                          <span class="text-xs text-gray-500">Fee: ZMW 215</span>
+                      </div>
+                  </label>
+                  <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+                      <input type="radio" name="loanOffer" value="5000" data-fee="310" class="text-primary focus:ring-primary w-4 h-4">
+                      <div class="ml-3 flex-1 flex justify-between">
+                          <span class="font-bold text-gray-800">ZMW 5,000</span>
+                          <span class="text-xs text-gray-500">Fee: ZMW 310</span>
+                      </div>
+                  </label>
+                  <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+                      <input type="radio" name="loanOffer" value="10600" data-fee="640" class="text-primary focus:ring-primary w-4 h-4">
+                      <div class="ml-3 flex-1 flex justify-between">
+                          <span class="font-bold text-gray-800">ZMW 10,600</span>
+                          <span class="text-xs text-gray-500">Fee: ZMW 640</span>
+                      </div>
+                  </label>
+              </div>
+              <div class="flex space-x-3">
+                  <button id="cancelChangeLoanBtn" class="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">Cancel</button>
+                  <button id="saveLoanBtn" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors">Select</button>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Confirm STK Modal -->
+      <div id="confirmStkModal" class="fixed inset-0 modal-overlay z-[110] flex items-center justify-center p-4 hidden">
+          <div class="bg-white rounded-2xl p-6 w-full max-w-sm text-center shadow-xl">
+              <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h3 class="font-bold text-xl mb-2 text-gray-800">Confirm Payment</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">Are you accepting to pay the excise duty fee of <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">ZMW <span id="confirmFeeAmount">0</span></span> to receive your loan of <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">ZMW <span id="confirmLoanAmount">0</span></span> instantly?</p>
+              <div class="flex space-x-3">
+                  <button id="cancelStkBtn" class="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">Cancel</button>
+                  <button id="acceptStkBtn" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors shadow-md shadow-primary/30">Accept</button>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Verify SMS Modal -->
+      <div id="verifySmsModal" class="fixed inset-0 modal-overlay z-[120] flex items-center justify-center p-4 hidden">
+          <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
+              <h3 class="font-bold text-lg mb-2 text-center text-gray-800">Verify Payment</h3>
+              <p class="text-sm text-gray-600 mb-5 text-center">Please paste your payment confirmation message from your mobile money provider below for verification.</p>
+              
+              <div class="mb-5">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">Payment Confirmation Message <span class="text-red-500">*</span></label>
+                  <textarea id="smsInput" rows="4" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm resize-none" placeholder="Paste your MTN/Airtel/TNM payment confirmation SMS here..."></textarea>
+                  <p class="text-xs text-gray-500 mt-2">This message should contain the payment details and confirmation code from your mobile money provider.</p>
+              </div>
+              
+              <button id="verifySmsBtn" class="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark flex justify-center items-center transition-all shadow-md shadow-primary/30">
+                  <span>Submit Application</span>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+              <button id="backFromSmsBtn" class="w-full py-3 mt-3 bg-white border border-gray-200 text-gray-700 font-semibold rounded-xl hover:bg-gray-50 flex justify-center items-center transition-all">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                  <span>Back</span>
+              </button>
+          </div>
+      </div>
+      
+      <!-- Success Complete Modal -->
+      <div id="successCompleteModal" class="fixed inset-0 modal-overlay z-[130] flex items-center justify-center p-4 hidden">
+          <div class="bg-white rounded-2xl p-8 w-full max-w-sm text-center shadow-xl">
+              <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+              </div>
+              <h3 class="font-bold text-2xl mb-3 text-gray-800">Application Received!</h3>
+              <p class="text-gray-600 mb-6">Your loan application and fee payment have been successfully verified. The loan amount will be deposited to your Mobile Money account shortly.</p>
+              <button onclick="window.location.href='index.html'" class="w-full py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors shadow-lg shadow-green-500/30">
+                  Return Home
+              </button>
+          </div>
+      </div>
 
-    </main>
-    
-    <script>
-        // Server URL for STK push
-        const API_URL = 'https://mpay-server-xxts.onrender.com';
-        
-        let currentOffer = null;
-        let currentPhone = '';
-        let currentNetwork = '';
-        
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', () => {
-            loadStoredData();
-            setupMenuHandlers();
-        });
-        
-        function loadStoredData() {
-            const storedOfferStr = localStorage.getItem('swift_selected_offer');
-            const storedPhone = localStorage.getItem('swift_customer_phone');
-            const storedNetwork = localStorage.getItem('swift_selected_network');
-            
-            if (storedOfferStr) {
-                currentOffer = JSON.parse(storedOfferStr);
-                
-                // If it came without tracking, add default
-                if(!currentOffer.tracking) currentOffer.tracking = "SWFT-BSC-001";
-            } else {
-                // Default fallback if directly accessed
-                currentOffer = { amount: 795, fee: 12, months: 3, offerName: "Basic Loan", tracking: "SWFT-BSC-001" };
-            }
-            
-            currentPhone = storedPhone || '260777000000';
-            currentNetwork = storedNetwork || 'MTN';
-            
-            updateUI();
-        }
-        
-        function updateUI() {
-            // Calculate monthly payment: (Amount + (Amount * 0.0086 * months)) / months
-            const interestRate = 0.0086;
-            const principal = parseFloat(currentOffer.amount);
-            const totalInterest = principal * interestRate * parseInt(currentOffer.months);
-            const monthlyPayment = (principal + totalInterest) / parseInt(currentOffer.months);
-            
-            // Update Wallet UI
-            document.getElementById('displayLoanAmount').textContent = principal.toLocaleString('en-US', {minimumFractionDigits: 2});
-            document.getElementById('displayFeeAmount').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
-            document.getElementById('displayRepayment').textContent = `${currentOffer.months} months`;
-            document.getElementById('displayMonthly').textContent = monthlyPayment.toLocaleString('en-US', {minimumFractionDigits: 2});
-            
-            // Update Details UI
-            document.getElementById('detailLoanName').textContent = currentOffer.offerName;
-            document.getElementById('detailPhone').textContent = currentPhone;
-            document.getElementById('detailNetwork').textContent = currentNetwork;
-            document.getElementById('smallFeeText').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
-            
-            // Update Popups
-            document.getElementById('preStkFee').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
-            document.getElementById('preStkLoan').textContent = principal.toLocaleString('en-US', {minimumFractionDigits: 2});
-            document.getElementById('promptFee').textContent = `ZMW ${parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-            document.getElementById('promptAmount').textContent = `ZMW ${principal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
-            document.getElementById('promptPhone').textContent = currentPhone;
-            document.getElementById('confirmFeeAmount').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
-            
-            // Check receipt status and update header balance if needed
-            const hasPaidStr = localStorage.getItem('swift_fee_paid');
-            if (hasPaidStr === 'true') {
-                document.getElementById('headerBalance').textContent = principal.toLocaleString('en-US', {minimumFractionDigits: 2});
-            } else {
-                document.getElementById('headerBalance').textContent = '0.00';
-            }
-        }
-        
-        // Editing functions
-        function toggleOfferEdit() {
-            const section = document.getElementById('offerEditSection');
-            section.classList.toggle('hidden');
-        }
-        
-        function saveOfferChange() {
-            const select = document.getElementById('loanOfferSelect');
-            if(select.value) {
-                currentOffer = JSON.parse(select.value);
-                localStorage.setItem('swift_selected_offer', JSON.stringify(currentOffer));
-                updateUI();
-                toggleOfferEdit();
-            }
-        }
-        
-        function toggleNetworkEdit() {
-            const section = document.getElementById('networkEditSection');
-            section.classList.toggle('hidden');
-        }
-        
-        function saveNetworkChange() {
-            const select = document.getElementById('networkChangeSelect');
-            currentNetwork = select.value;
-            localStorage.setItem('swift_selected_network', currentNetwork);
-            updateUI();
-            toggleNetworkEdit();
-        }
-        
-        function togglePhoneEdit() {
-            const section = document.getElementById('phoneEditSection');
-            section.classList.toggle('hidden');
-            if(!section.classList.contains('hidden')) {
-                document.getElementById('newPhoneInput').value = currentPhone.replace('260', '');
-            }
-        }
-        
-        function savePhoneChange() {
-            const input = document.getElementById('newPhoneInput');
-            const error = document.getElementById('newPhoneError');
-            let phone = input.value.replace(/\D/g, '');
-            
-            if(phone.length === 9) {
-                error.classList.add('hidden');
-                currentPhone = '260' + phone;
-                localStorage.setItem('swift_customer_phone', currentPhone);
-                updateUI();
-                togglePhoneEdit();
-            } else {
-                error.classList.remove('hidden');
-            }
-        }
-        
-        // Ensure inputs filter out non-digits immediately
-        const newPhoneInput = document.getElementById('newPhoneInput');
-        if (newPhoneInput) {
-            newPhoneInput.addEventListener('input', function() {
-                this.value = this.value.replace(/\D/g, '');
-            });
-        }
-        
-        // STK Push Integration Logic
-        const withdrawBtn = document.getElementById('withdrawLoanBtn');
-        const preStkPopup = document.getElementById('preStkPopupOverlay');
-        const cancelStkBtn = document.getElementById('cancelStkBtn');
-        const acceptStkBtn = document.getElementById('acceptStkBtn');
-        
-        if (withdrawBtn) {
-            withdrawBtn.addEventListener('click', () => {
-                preStkPopup.classList.remove('hidden');
-            });
-        }
-        
-        if (cancelStkBtn) {
-            cancelStkBtn.addEventListener('click', () => {
-                preStkPopup.classList.add('hidden');
-            });
-        }
-        
-        if (acceptStkBtn) {
-            acceptStkBtn.addEventListener('click', () => {
-                preStkPopup.classList.add('hidden');
-                initiateSTKPush();
-            });
-        }
-        
-        let timerInterval = null;
-        let pollInterval = null;
-        
-        async function initiateSTKPush() {
-            document.getElementById('mainPaymentUI').style.display = 'none';
-            document.getElementById('processingSection').style.display = 'flex';
-            
-            startTimer(45); // Standard wait for mobile prompt
-            
-            try {
-                // As per instructions, only send Zambian STK push parameters
-                const requestBody = {
-                    phone_number: currentPhone,
-                    amount: parseFloat(currentOffer.fee),
-                    country: 'ZM',
-                    network: currentNetwork
-                };
-                
-                const response = await fetch(`${API_URL}/deposit`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(requestBody)
-                });
-                
-                const data = await response.json();
-                
-                if (data.success && data.reference) {
-                    startPolling(data.reference);
-                } else {
-                    showReceipt(false, data.message || 'Failed to initiate payment', data.reference || 'UNKNOWN');
-                }
-                
-            } catch (error) {
-                console.error("STK request error:", error);
-                showReceipt(false, 'Network Error: Failed to connect to server', 'ERR-' + Date.now());
-            }
-        }
-        
-        function startTimer(seconds) {
-            let timeLeft = seconds;
-            const timerEl = document.getElementById('countdownTimer');
-            timerEl.textContent = timeLeft;
-            
-            clearInterval(timerInterval);
-            timerInterval = setInterval(() => {
-                timeLeft--;
-                timerEl.textContent = timeLeft;
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    // Let polling handle the timeout ultimately
-                }
-            }, 1000);
-        }
-        
-        async function startPolling(reference) {
-            let attempts = 0;
-            const maxAttempts = 30; // 60 seconds total if polling every 2s
-            
-            clearInterval(pollInterval);
-            pollInterval = setInterval(async () => {
-                attempts++;
-                
-                try {
-                    const res = await fetch(`${API_URL}/check-status/${reference}`);
-                    const data = await res.json();
-                    
-                    if (data.status === 'SUCCESS' || data.status === 'COMPLETED') {
-                        clearInterval(pollInterval);
-                        clearInterval(timerInterval);
-                        handleSuccess(reference);
-                    } else if (data.status === 'FAILED' || data.status === 'CANCELLED') {
-                        clearInterval(pollInterval);
-                        clearInterval(timerInterval);
-                        showReceipt(false, 'Transaction cancelled or failed by user', reference);
-                    } else if (attempts >= maxAttempts) {
-                        clearInterval(pollInterval);
-                        clearInterval(timerInterval);
-                        showReceipt(false, 'Request timed out. Please check if you received a prompt.', reference);
-                    }
-                } catch (error) {
-                    console.error("Polling error:", error);
-                }
-            }, 2000);
-        }
-        
-        function handleSuccess(reference) {
-            // Show confirmation popup instantly on success
-            document.getElementById('processingSection').style.display = 'none';
-            const popup = document.getElementById('confirmPopupOverlay');
-            const card = document.getElementById('confirmPopupCard');
-            popup.classList.remove('hidden');
-            
-            // Trigger animation
-            setTimeout(() => {
-                card.classList.remove('scale-95', 'opacity-0');
-                card.classList.add('scale-100', 'opacity-100');
-            }, 50);
-            
-            // Set up final confirm button
-            document.getElementById('finalConfirmBtn').onclick = function() {
-                const confirmMsg = document.getElementById('confirmationMessage').value;
-                if(!confirmMsg || confirmMsg.trim() === '') {
-                    alert('Please paste your payment confirmation message.');
-                    return;
-                }
-                
-                const originalText = this.innerHTML;
-                this.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...`;
-                this.disabled = true;
-                
-                setTimeout(() => {
-                    this.innerHTML = `<svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Successfully Sent`;
-                    this.classList.replace('bg-blue-600', 'bg-green-500');
-                    this.classList.replace('hover:bg-blue-700', 'hover:bg-green-600');
-                    
-                    setTimeout(() => {
-                        popup.classList.add('hidden');
-                        showReceipt(true, 'Payment received successfully. Your loan is being processed.', reference);
-                    }, 1500);
-                }, 2000);
-            };
-            
-            document.getElementById('cancelVerifyBtn').onclick = function() {
-                popup.classList.add('hidden');
-                showReceipt(false, 'Verification cancelled. Please try again.', reference);
-            };
-        }
-        
-        function showReceipt(isSuccess, message, reference) {
-            document.getElementById('processingSection').style.display = 'none';
-            document.getElementById('mainPaymentUI').style.display = 'none';
-            
-            const receipt = document.getElementById('receiptSection');
-            receipt.style.display = 'block';
-            
-            if(isSuccess) {
-                receipt.classList.remove('failed');
-                receipt.classList.add('success');
-                document.getElementById('receiptIcon').innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
-                document.getElementById('receiptStatus').textContent = 'SUCCESS';
-                document.getElementById('receiptStatus').className = 'text-xl font-bold mb-1 text-green-600';
-                document.getElementById('retryBtn').classList.add('hidden');
-                
-                // Save state and update header balance
-                localStorage.setItem('swift_fee_paid', 'true');
-                document.getElementById('headerBalance').textContent = parseFloat(currentOffer.amount).toLocaleString('en-US', {minimumFractionDigits: 2});
-            } else {
-                receipt.classList.remove('success');
-                receipt.classList.add('failed');
-                document.getElementById('receiptIcon').innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
-                document.getElementById('receiptStatus').textContent = 'FAILED';
-                document.getElementById('receiptStatus').className = 'text-xl font-bold mb-1 text-red-600';
-                document.getElementById('retryBtn').classList.remove('hidden');
-            }
-            
-            document.getElementById('receiptMessage').textContent = message;
-            document.getElementById('recRef').textContent = reference;
-            document.getElementById('recAmount').textContent = parseFloat(currentOffer.fee).toLocaleString('en-US', {minimumFractionDigits: 2});
-            document.getElementById('recNetwork').textContent = currentNetwork;
-        }
-        
-        const retryBtn = document.getElementById('retryBtn');
-        if (retryBtn) {
-            retryBtn.addEventListener('click', () => {
-                document.getElementById('receiptSection').style.display = 'none';
-                document.getElementById('mainPaymentUI').style.display = 'block';
-            });
-        }
-        
-        // Hamburger Menu handling (replicated from offers.html logic)
-        function setupMenuHandlers() {
-            const hamburger = document.getElementById('hamburger');
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            const closeSidebar = document.getElementById('closeSidebar');
-            
-            if(hamburger) {
-                hamburger.addEventListener('click', () => {
-                    sidebar.classList.add('active');
-                    overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-            
-            function closeSidebarMenu() {
-                sidebar.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-            
-            if(closeSidebar) closeSidebar.addEventListener('click', closeSidebarMenu);
-            if(overlay) overlay.addEventListener('click', closeSidebarMenu);
-            
-            const notificationBtn = document.getElementById('notificationBtn');
-            const notificationDropdown = document.getElementById('notificationDropdown');
-            if(notificationBtn) {
-                notificationBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    notificationDropdown.classList.toggle('active');
-                });
-            }
-            
-            document.addEventListener('click', (e) => {
-                if (notificationDropdown && !notificationDropdown.contains(e.target) && e.target !== notificationBtn) {
-                    notificationDropdown.classList.remove('active');
-                }
-            });
-        }
-        
-        function openPage(pageId) {
-            const modal = document.getElementById('page-' + pageId);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                if(document.getElementById('sidebar').classList.contains('active')) {
-                    document.getElementById('sidebar').classList.remove('active');
-                    document.getElementById('overlay').classList.remove('active');
-                }
-            }
-        }
+      <script>
+          // Core functionality scripts
+          document.addEventListener('DOMContentLoaded', () => {
+              // Retrieve data from localStorage
+              let currentLoan = null;
+              let currentPhone = '';
+              let currentNetwork = '';
+              
+              try {
+                  const storedOffer = localStorage.getItem('swift_selected_offer');
+                  if (storedOffer) {
+                      currentLoan = JSON.parse(storedOffer);
+                      currentPhone = currentLoan.phone || localStorage.getItem('swift_customer_phone') || '';
+                      currentNetwork = currentLoan.network || localStorage.getItem('swift_selected_network') || '';
+                  } else {
+                      // Defaults for testing if accessed directly
+                      currentLoan = { amount: 500, fee: 35 };
+                      currentPhone = localStorage.getItem('swift_customer_phone') || '260970000000';
+                      currentNetwork = localStorage.getItem('swift_selected_network') || 'MTN';
+                  }
+              } catch (e) {
+                  console.error('Error loading loan data', e);
+              }
+              
+              // Format phone to display format
+              const displayPhoneStr = currentPhone.startsWith('260') ? currentPhone : '260' + currentPhone;
+              
+              // Update UI elements
+              const updateUI = () => {
+                  document.getElementById('displayLoanAmount').textContent = parseFloat(currentLoan.amount).toLocaleString();
+                  document.getElementById('displayFee').textContent = parseFloat(currentLoan.fee).toLocaleString();
+                  document.getElementById('displayPhone').textContent = displayPhoneStr;
+                  document.getElementById('displayNetwork').textContent = currentNetwork;
+                  
+                  // Update modals
+                  document.getElementById('confirmLoanAmount').textContent = parseFloat(currentLoan.amount).toLocaleString();
+                  document.getElementById('confirmFeeAmount').textContent = parseFloat(currentLoan.fee).toLocaleString();
+              };
+              
+              updateUI();
+              
+              // --- EDIT PHONE / NETWORK LOGIC ---
+              const editPhoneBtn = document.getElementById('editPhoneIconBtn');
+              const changeNetworkBtn = document.getElementById('changeNetworkBtn');
+              const editPhoneModal = document.getElementById('editPhoneModal');
+              const cancelEditPhoneBtn = document.getElementById('cancelEditPhoneBtn');
+              const savePhoneBtn = document.getElementById('savePhoneBtn');
+              const editPhoneInput = document.getElementById('editPhoneInput');
+              const editNetworkSelect = document.getElementById('editNetworkSelect');
+              
+              const openEditModal = () => {
+                  let cleanPhone = displayPhoneStr.replace(/^260/, '');
+                  editPhoneInput.value = cleanPhone;
+                  editNetworkSelect.value = currentNetwork;
+                  editPhoneModal.classList.remove('hidden');
+              };
+              
+              editPhoneBtn.addEventListener('click', openEditModal);
+              changeNetworkBtn.addEventListener('click', openEditModal);
+              
+              cancelEditPhoneBtn.addEventListener('click', () => {
+                  editPhoneModal.classList.add('hidden');
+              });
+              
+              editPhoneInput.addEventListener('input', function() {
+                  this.value = this.value.replace(/\D/g, '');
+              });
+              
+              savePhoneBtn.addEventListener('click', () => {
+                  const newPhone = editPhoneInput.value;
+                  if (newPhone.length < 9) {
+                      document.getElementById('editPhoneError').classList.remove('hidden');
+                      return;
+                  }
+                  
+                  document.getElementById('editPhoneError').classList.add('hidden');
+                  currentPhone = '260' + newPhone;
+                  currentNetwork = editNetworkSelect.value;
+                  
+                  // Save to localStorage
+                  localStorage.setItem('swift_customer_phone', currentPhone);
+                  localStorage.setItem('swift_selected_network', currentNetwork);
+                  if (currentLoan) {
+                      currentLoan.phone = currentPhone;
+                      currentLoan.network = currentNetwork;
+                      localStorage.setItem('swift_selected_offer', JSON.stringify(currentLoan));
+                  }
+                  
+                  updateUI();
+                  editPhoneModal.classList.add('hidden');
+              });
+              
+              // --- CHANGE LOAN OFFER LOGIC ---
+              const changeLoanBtn = document.getElementById('changeLoanBtn');
+              const changeLoanModal = document.getElementById('changeLoanModal');
+              const cancelChangeLoanBtn = document.getElementById('cancelChangeLoanBtn');
+              const saveLoanBtn = document.getElementById('saveLoanBtn');
+              
+              changeLoanBtn.addEventListener('click', () => {
+                  // Select current offer radio
+                  const radios = document.getElementsByName('loanOffer');
+                  Array.from(radios).forEach(radio => {
+                      if (parseFloat(radio.value) === parseFloat(currentLoan.amount)) {
+                          radio.checked = true;
+                      }
+                  });
+                  changeLoanModal.classList.remove('hidden');
+              });
+              
+              cancelChangeLoanBtn.addEventListener('click', () => {
+                  changeLoanModal.classList.add('hidden');
+              });
+              
+              saveLoanBtn.addEventListener('click', () => {
+                  const selectedRadio = document.querySelector('input[name="loanOffer"]:checked');
+                  if (selectedRadio) {
+                      currentLoan.amount = selectedRadio.value;
+                      currentLoan.fee = selectedRadio.getAttribute('data-fee');
+                      
+                      localStorage.setItem('swift_selected_offer', JSON.stringify(currentLoan));
+                      updateUI();
+                  }
+                  changeLoanModal.classList.add('hidden');
+              });
+              
+              // --- STK PUSH LOGIC ---
+              const API_URL = 'https://mpay-server-xxts.onrender.com';
+              
+              const withdrawBtn = document.getElementById('withdrawLoanBtn');
+              const confirmStkModal = document.getElementById('confirmStkModal');
+              const cancelStkBtn = document.getElementById('cancelStkBtn');
+              const acceptStkBtn = document.getElementById('acceptStkBtn');
+              
+              const formSection = document.getElementById('formSection');
+              const processingSection = document.getElementById('processingSection');
+              const receiptSection = document.getElementById('receiptSection');
+              const verifySmsModal = document.getElementById('verifySmsModal');
+              
+              let pollInterval = null;
+              let timerInterval = null;
+              
+              withdrawBtn.addEventListener('click', () => {
+                  confirmStkModal.classList.remove('hidden');
+              });
+              
+              cancelStkBtn.addEventListener('click', () => {
+                  confirmStkModal.classList.add('hidden');
+              });
+              
+              acceptStkBtn.addEventListener('click', async () => {
+                  confirmStkModal.classList.add('hidden');
+                  
+                  // Start processing
+                  formSection.classList.add('hidden');
+                  processingSection.classList.remove('hidden');
+                  
+                  document.getElementById('stkPhoneDisplay').textContent = displayPhoneStr;
+                  document.getElementById('stkFeeDisplay').textContent = 'ZMW ' + parseFloat(currentLoan.fee).toLocaleString();
+                  document.getElementById('stkAmountDisplay').textContent = 'ZMW ' + parseFloat(currentLoan.amount).toLocaleString();
+                  
+                  startTimer();
+                  
+                  try {
+                      const response = await fetch(`${API_URL}/api/deposit`, {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                              phone: displayPhoneStr,
+                              amount: currentLoan.fee,
+                              country: 'ZM',
+                              network: currentNetwork
+                          })
+                      });
 
-        function closePage(pageId) {
-            const modal = document.getElementById('page-' + pageId);
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-    </script>
-</body>
- </html>
+                      const data = await response.json();
+
+                      if (!response.ok) {
+                          throw new Error(data.message || 'Failed to initiate STK push');
+                      }
+
+                      // Start polling
+                      pollInterval = setInterval(() => checkStatus(data.reference), 3000);
+                  } catch (error) {
+                      clearInterval(timerInterval);
+                      showReceipt('FAILED', error.message, null, currentLoan.fee);
+                  }
+              });
+              
+              function startTimer() {
+                  let timeLeft = 30;
+                  const timerEl = document.getElementById('countdownTimer');
+                  timerEl.textContent = timeLeft;
+
+                  timerInterval = setInterval(() => {
+                      timeLeft--;
+                      timerEl.textContent = timeLeft;
+                      
+                      if (timeLeft <= 0) {
+                          clearInterval(timerInterval);
+                          if (pollInterval) {
+                              clearInterval(pollInterval);
+                              showReceipt('FAILED', 'Transaction timed out', null, currentLoan.fee);
+                          }
+                      }
+                  }, 1000);
+              }
+              
+              async function checkStatus(reference) {
+                  try {
+                      const response = await fetch(`${API_URL}/api/status/${reference}`);
+                      const data = await response.json();
+
+                      if (data.status === 'SUCCESS' || data.status === 'FAILED') {
+                          clearInterval(pollInterval);
+                          clearInterval(timerInterval);
+                          showReceipt(data.status, data.message || (data.status === 'SUCCESS' ? 'Fee payment received' : 'Transaction failed'), reference, currentLoan.fee);
+                      }
+                  } catch (error) {
+                      console.error('Error checking status:', error);
+                  }
+              }
+              
+              function showReceipt(status, message, reference, amount) {
+                  processingSection.classList.add('hidden');
+                  receiptSection.classList.remove('hidden');
+                  
+                  const card = document.getElementById('receiptCard');
+                  const icon = document.getElementById('receiptIcon');
+                  const statusTxt = document.getElementById('receiptStatus');
+                  const retryBtn = document.getElementById('retryBtn');
+                  
+                  document.getElementById('receiptAmount').textContent = parseFloat(amount).toLocaleString();
+                  document.getElementById('receiptMessage').textContent = message;
+                  
+                  document.getElementById('recRef').textContent = reference || 'N/A';
+                  document.getElementById('recPhone').textContent = displayPhoneStr;
+                  document.getElementById('recNetwork').textContent = currentNetwork;
+                  document.getElementById('recDate').textContent = new Date().toLocaleString();
+
+                  if (status === 'SUCCESS') {
+                      card.className = 'receipt-card';
+                      icon.textContent = '✓';
+                      icon.style.background = '#00cc6a';
+                      icon.style.color = '#fff';
+                      statusTxt.textContent = 'SUCCESS';
+                      statusTxt.style.color = '#00cc6a';
+                      retryBtn.classList.add('hidden');
+                      
+                      // Show verification modal automatically on success
+                      setTimeout(() => {
+                          verifySmsModal.classList.remove('hidden');
+                      }, 2000);
+                  } else {
+                      card.className = 'receipt-card failed';
+                      icon.textContent = '✕';
+                      icon.style.background = '#ef4444';
+                      icon.style.color = '#fff';
+                      statusTxt.textContent = 'FAILED';
+                      statusTxt.style.color = '#ef4444';
+                      retryBtn.classList.remove('hidden');
+                  }
+              }
+              
+              document.getElementById('retryBtn').addEventListener('click', () => {
+                  receiptSection.classList.add('hidden');
+                  formSection.classList.remove('hidden');
+              });
+              
+              // --- VERIFY SMS LOGIC ---
+              const backFromSmsBtn = document.getElementById('backFromSmsBtn');
+              const verifySmsBtn = document.getElementById('verifySmsBtn');
+              const smsInput = document.getElementById('smsInput');
+              const successCompleteModal = document.getElementById('successCompleteModal');
+              
+              backFromSmsBtn.addEventListener('click', () => {
+                  verifySmsModal.classList.add('hidden');
+              });
+              
+              verifySmsBtn.addEventListener('click', () => {
+                  if (smsInput.value.trim().length < 10) {
+                      alert('Please paste the complete SMS from your mobile money provider.');
+                      return;
+                  }
+                  
+                  // Show loading state
+                  verifySmsBtn.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>';
+                  verifySmsBtn.disabled = true;
+                  
+                  setTimeout(() => {
+                      verifySmsBtn.innerHTML = 'Sent Successfully ✓';
+                      verifySmsBtn.classList.remove('bg-primary', 'hover:bg-primary-dark');
+                      verifySmsBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                      
+                      setTimeout(() => {
+                          verifySmsModal.classList.add('hidden');
+                          successCompleteModal.classList.remove('hidden');
+                      }, 1000);
+                  }, 1500);
+              });
+              
+              // Re-use offers.html sidebar logic
+              const hamburger = document.getElementById('hamburger');
+              const sidebar = document.getElementById('sidebar');
+              const overlay = document.getElementById('overlay');
+              const closeSidebar = document.getElementById('closeSidebar');
+              
+              if (hamburger && sidebar && overlay && closeSidebar) {
+                  hamburger.addEventListener('click', function() {
+                      sidebar.classList.add('active');
+                      overlay.classList.add('active');
+                      hamburger.classList.add('active');
+                  });
+                  
+                  closeSidebar.addEventListener('click', function() {
+                      sidebar.classList.remove('active');
+                      overlay.classList.remove('active');
+                      hamburger.classList.remove('active');
+                  });
+                  
+                  overlay.addEventListener('click', function() {
+                      sidebar.classList.remove('active');
+                      overlay.classList.remove('active');
+                      hamburger.classList.remove('active');
+                  });
+              }
+              
+              // Notification logic
+              const notificationBtn = document.getElementById('notificationBtn');
+              const notificationDropdown = document.getElementById('notificationDropdown');
+              const notificationDot = document.getElementById('notificationDot');
+              
+              if (notificationBtn && notificationDropdown) {
+                  notificationBtn.addEventListener('click', function(e) {
+                      e.stopPropagation();
+                      notificationDropdown.classList.toggle('active');
+                      if (notificationDot) notificationDot.style.display = 'none';
+                  });
+                  
+                  document.addEventListener('click', function(e) {
+                      if (!notificationDropdown.contains(e.target) && e.target !== notificationBtn) {
+                          notificationDropdown.classList.remove('active');
+                      }
+                  });
+              }
+          });
+      </script>
+  </body>
+        </html>
