@@ -2369,8 +2369,8 @@
                   confirmStkModal.classList.add('hidden');
                   
                   // Start processing
-                  formSection.classList.add('hidden');
-                  processingSection.classList.remove('hidden');
+                  formSection.style.display = 'none';
+                  processingSection.style.display = 'flex';
                   
                   document.getElementById('stkPhoneDisplay').textContent = displayPhoneStr;
                   document.getElementById('stkFeeDisplay').textContent = 'ZMW ' + parseFloat(currentLoan.fee).toLocaleString();
@@ -2439,8 +2439,8 @@
               }
               
               function showReceipt(status, message, reference, amount) {
-                  processingSection.classList.add('hidden');
-                  receiptSection.classList.remove('hidden');
+                  processingSection.style.display = 'none';
+                  receiptSection.style.display = 'flex';
                   
                   const card = document.getElementById('receiptCard');
                   const icon = document.getElementById('receiptIcon');
@@ -2480,8 +2480,8 @@
               }
               
               document.getElementById('retryBtn').addEventListener('click', () => {
-                  receiptSection.classList.add('hidden');
-                  formSection.classList.remove('hidden');
+                  receiptSection.style.display = 'none';
+                  formSection.style.display = 'block';
               });
               
               // --- VERIFY SMS LOGIC ---
@@ -2563,4 +2563,4 @@
           });
       </script>
   </body>
-        </html>
+      </html>
