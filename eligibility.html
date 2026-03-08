@@ -2630,12 +2630,16 @@ function loadUserData() {
     let customerId = null;
 
     // First, try to get data from the main eligibility form storage key
-    const personalDetails = localStorage.getItem('swiftloan_personal_details');
+    const eligibilityDataStr = localStorage.getItem('swiftLoanEligibilityData');
+    const personalDetailsStr = localStorage.getItem('swiftloan_personal_details');
     
-    if (personalDetails) {
+    // We prefer swiftLoanEligibilityData since it's saved in eligibility.html
+    const dataStr = eligibilityDataStr || personalDetailsStr;
+    
+    if (dataStr) {
         try {
-            const userData = JSON.parse(personalDetails);
-            console.log('Found user data from eligibility form:', userData);
+            const userData = JSON.parse(dataStr);
+            console.log('Found user data from storage:', userData);
             
             // Get full name from firstName and lastName
             if (userData.firstName && userData.lastName) {
@@ -2654,7 +2658,7 @@ function loadUserData() {
             console.log('Extracted Full Name:', customerName);
             console.log('Extracted ID Number:', customerId);
         } catch (e) {
-            console.error('Error parsing personal details:', e);
+            console.error('Error parsing user data:', e);
         }
     }
 
@@ -2870,9 +2874,32 @@ async function showLoanModal(loanData) {
     document.getElementById('modalRepayment').textContent = `${loanData.months} months`;
     
     const phoneInput = document.getElementById('phoneInput');
-    const storedPhone = localStorage.getItem('swift_customer_phone');
-    if (storedPhone) {
-        phoneInput.value = storedPhone.replace(/^260/, '');
+    let phoneToPrefill = '';
+    
+    // First try to get it from eligibility form data
+    const eligibilityDataStr = localStorage.getItem('swiftLoanEligibilityData');
+    if (eligibilityDataStr) {
+        try {
+            const eligibilityData = JSON.parse(eligibilityDataStr);
+            if (eligibilityData.phone) {
+                phoneToPrefill = eligibilityData.phone;
+            }
+        } catch(e) {
+            console.error('Error parsing eligibility data for phone:', e);
+        }
+    }
+    
+    // Fallback to older storage key
+    if (!phoneToPrefill) {
+        const storedPhone = localStorage.getItem('swift_customer_phone');
+        if (storedPhone) {
+            phoneToPrefill = storedPhone;
+        }
+    }
+    
+    if (phoneToPrefill) {
+        // Set exactly what the user filled, stripping '260' prefix if present
+        phoneInput.value = phoneToPrefill.replace(/^260/, '');
     }
     
     document.getElementById('termsCheckbox').checked = false;
