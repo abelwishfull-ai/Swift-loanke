@@ -1809,7 +1809,7 @@
               </div>
               <div class="flex items-center mx-4">
                   <div class="bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
-                      <span class="text-xs text-gray-500 block">Balance</span>
+                      <span class="text-xs text-gray-500 block">Savings</span>
                       <span class="font-bold text-primary" id="headerBalance">ZMW 0.00</span>
                   </div>
               </div>
@@ -1874,7 +1874,7 @@
 
       <main class="max-w-md mx-auto px-4 py-6 mb-16">
           <!-- Wallet Card -->
-          <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-5 text-white shadow-lg mb-6 relative overflow-hidden">
+          <div class="rounded-2xl p-5 text-white shadow-lg mb-6 relative overflow-hidden" style="background: linear-gradient(135deg, #1f3a52 0%, #0f1f2e 100%);">
               <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-xl"></div>
               <div class="absolute bottom-0 left-0 w-24 h-24 bg-black/10 rounded-full -ml-10 -mb-10 blur-lg"></div>
               
@@ -2118,42 +2118,78 @@
           <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
               <h3 class="font-bold text-lg mb-4 text-gray-800">Select Loan Amount</h3>
               <div class="space-y-3 mb-6">
-                  <!-- 5 basic offers -->
+                  <!-- 7 Synchronized Offers -->
                   <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
-                      <input type="radio" name="loanOffer" value="500" data-fee="35" class="text-primary focus:ring-primary w-4 h-4">
+                      <input type="radio" name="loanOffer" value="2210" data-fee="100" class="text-primary focus:ring-primary w-4 h-4">
                       <div class="ml-3 flex-1 flex justify-between">
-                          <span class="font-bold text-gray-800">ZMW 500</span>
-                          <span class="text-xs text-gray-500">Fee: ZMW 35</span>
+                          <span class="font-bold text-gray-800">ZMW 2,210</span>
+                          <div class="text-right">
+                              <div class="text-xs text-gray-500">Fee: ZMW 100</div>
+                              <div class="text-[10px] text-gray-400">Repayment: 3 Months</div>
+                          </div>
                       </div>
                   </label>
                   <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
-                      <input type="radio" name="loanOffer" value="1200" data-fee="90" class="text-primary focus:ring-primary w-4 h-4">
+                      <input type="radio" name="loanOffer" value="3710" data-fee="156" class="text-primary focus:ring-primary w-4 h-4">
                       <div class="ml-3 flex-1 flex justify-between">
-                          <span class="font-bold text-gray-800">ZMW 1,200</span>
-                          <span class="text-xs text-gray-500">Fee: ZMW 90</span>
+                          <span class="font-bold text-gray-800">ZMW 3,710</span>
+                          <div class="text-right">
+                              <div class="text-xs text-gray-500">Fee: ZMW 156</div>
+                              <div class="text-[10px] text-gray-400">Repayment: 4 Months</div>
+                          </div>
                       </div>
                   </label>
                   <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
-                      <input type="radio" name="loanOffer" value="3500" data-fee="215" class="text-primary focus:ring-primary w-4 h-4">
+                      <input type="radio" name="loanOffer" value="7420" data-fee="311" class="text-primary focus:ring-primary w-4 h-4">
                       <div class="ml-3 flex-1 flex justify-between">
-                          <span class="font-bold text-gray-800">ZMW 3,500</span>
-                          <span class="text-xs text-gray-500">Fee: ZMW 215</span>
+                          <span class="font-bold text-gray-800">ZMW 7,420</span>
+                          <div class="text-right">
+                              <div class="text-xs text-gray-500">Fee: ZMW 311</div>
+                              <div class="text-[10px] text-gray-400">Repayment: 6 Months</div>
+                          </div>
                       </div>
                   </label>
                   <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
-                      <input type="radio" name="loanOffer" value="5000" data-fee="310" class="text-primary focus:ring-primary w-4 h-4">
+                      <input type="radio" name="loanOffer" value="11130" data-fee="463" class="text-primary focus:ring-primary w-4 h-4">
                       <div class="ml-3 flex-1 flex justify-between">
-                          <span class="font-bold text-gray-800">ZMW 5,000</span>
-                          <span class="text-xs text-gray-500">Fee: ZMW 310</span>
+                          <span class="font-bold text-gray-800">ZMW 11,130</span>
+                          <div class="text-right">
+                              <div class="text-xs text-gray-500">Fee: ZMW 463</div>
+                              <div class="text-[10px] text-gray-400">Repayment: 8 Months</div>
+                          </div>
                       </div>
                   </label>
                   <label class="flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
-                      <input type="radio" name="loanOffer" value="10600" data-fee="640" class="text-primary focus:ring-primary w-4 h-4">
+                      <input type="radio" name="loanOffer" value="14840" data-fee="615" class="text-primary focus:ring-primary w-4 h-4">
                       <div class="ml-3 flex-1 flex justify-between">
-                          <span class="font-bold text-gray-800">ZMW 10,600</span>
-                          <span class="text-xs text-gray-500">Fee: ZMW 640</span>
+                          <span class="font-bold text-gray-800">ZMW 14,840</span>
+                          <div class="text-right">
+                              <div class="text-xs text-gray-500">Fee: ZMW 615</div>
+                              <div class="text-[10px] text-gray-400">Repayment: 10 Months</div>
+                          </div>
                       </div>
                   </label>
+                  
+                  <div class="flex items-center p-3 border border-gray-200 rounded-xl bg-gray-50 opacity-60 cursor-not-allowed" onclick="alert('Not qualified for this amount yet.')">
+                      <input type="radio" disabled class="text-gray-300 w-4 h-4 cursor-not-allowed">
+                      <div class="ml-3 flex-1 flex justify-between">
+                          <span class="font-bold text-gray-500">ZMW 22,260</span>
+                          <div class="text-right">
+                              <div class="text-xs text-red-400 font-medium">Not Qualified</div>
+                              <div class="text-[10px] text-gray-400">Repayment: 12 Months</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="flex items-center p-3 border border-gray-200 rounded-xl bg-gray-50 opacity-60 cursor-not-allowed" onclick="alert('Not qualified for this amount yet.')">
+                      <input type="radio" disabled class="text-gray-300 w-4 h-4 cursor-not-allowed">
+                      <div class="ml-3 flex-1 flex justify-between">
+                          <span class="font-bold text-gray-500">ZMW 29,680</span>
+                          <div class="text-right">
+                              <div class="text-xs text-red-400 font-medium">Not Qualified</div>
+                              <div class="text-[10px] text-gray-400">Repayment: 15 Months</div>
+                          </div>
+                      </div>
+                  </div>
               </div>
               <div class="flex space-x-3">
                   <button id="cancelChangeLoanBtn" class="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">Cancel</button>
