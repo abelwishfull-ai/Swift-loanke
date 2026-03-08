@@ -97,15 +97,6 @@
         }
 
         /* Auto-typing text animation */
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
         @keyframes blink {
             from, to {
                 border-right-color: var(--primary-orange);
@@ -116,11 +107,9 @@
         }
 
         .auto-type {
-            display: inline-block;
-            overflow: hidden;
+            display: inline;
             border-right: 3px solid var(--primary-orange);
-            white-space: nowrap;
-            animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+            animation: blink 0.75s step-end infinite;
         }
 
         /* Eligibility Section */
@@ -623,14 +612,9 @@
             opacity: 1;
         }
 
+        /* Removed overlay so photos are not blocked/covered */
         .carousel-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0,31,92,0.7) 0%, rgba(0,53,128,0.7) 100%);
+            display: none;
         }
 
         .carousel-dots {
@@ -2908,5 +2892,25 @@
     // Auto-scroll every 5 seconds
     setInterval(nextSlide, 5000);
 })();
+
+// Auto-type functionality for multiline text
+document.addEventListener("DOMContentLoaded", function() {
+    const autoTypeElement = document.querySelector('.auto-type');
+    if (autoTypeElement) {
+        const text = autoTypeElement.textContent;
+        autoTypeElement.textContent = '';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                autoTypeElement.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 40);
+            }
+        }
+        
+        setTimeout(typeWriter, 500);
+    }
+});
 </script>
 
