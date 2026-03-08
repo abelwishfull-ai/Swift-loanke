@@ -3384,9 +3384,15 @@ setInterval(updateZambiaTime, 1000);
     <!-- Notification Script -->
     <script>
         // Data to randomly choose from
+        const names = [
+            'Lubinda Imasiku', 'Chanda Phiri', 'Mumba Mulenga', 'Kangwa Bwalya', 'Chilufya Mwansa',
+            'Mutinta Tembo', 'Bupe Banda', 'Kondwani Lungu', 'Mapalo Nkhata', 'Thandiwe Ngoma',
+            'Mwape Silwimba', 'Besa Kasonde', 'Mwangala Chishimba', 'Taonga Sakala', 'Kabwe Mwale',
+            'Lumbani Zulu', 'Chipo Simbeye', 'Mulenga Chilufya', 'Kasongo Chibwe', 'Mabvuto Mwanza'
+        ];
         const amounts = ['2,500', '5,000', '1,500', '8,000', '10,600', '3,200', '4,500', '6,800', '1,200', '9,500'];
-        const networks = ['MTN', 'Airtel', 'TNM'];
-        const times = ['now', '1 sec ago', '5 secs ago', '10 secs ago', '1 min ago', '2 mins ago', '5 mins ago', 'yesterday'];
+        const networks = ['MTN', 'Airtel', 'Zamtel'];
+        const times = ['now', '1 sec ago', '5 secs ago', '10 secs ago', '1 min ago', '2 mins ago', '3 mins ago', '7 mins ago', '12 secs ago', '30 secs ago', '4 mins ago', '18 mins ago', '45 secs ago', '2 hrs ago', '9 mins ago', '6 mins ago', '14 secs ago', '21 mins ago', '1 min ago', '50 secs ago', '3 hrs ago', '11 mins ago', '25 secs ago', '8 mins ago', '16 mins ago', '40 secs ago', '5 hrs ago', '13 mins ago', '2 mins ago', '55 secs ago', '19 mins ago', '6 hrs ago' '5 mins ago', 'yesterday'];
 
         function getRandomItem(array) {
             return array[Math.floor(Math.random() * array.length)];
@@ -3406,8 +3412,11 @@ setInterval(updateZambiaTime, 1000);
                     </svg>
                 </div>
                 <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-white mb-0.5" style="opacity: 0.95;">
+                        ${data.name} was approved
+                    </p>
                     <p class="text-base font-bold text-white">
-                        ${data.amount} ZMW Approved
+                        ${data.amount} ZMW
                     </p>
                     <p class="text-sm text-green-100 mt-0.5">
                         Received via ${data.network}
@@ -3436,14 +3445,16 @@ setInterval(updateZambiaTime, 1000);
         }
 
         function scheduleNextNotification() {
+            const name = getRandomItem(names);
             const amount = getRandomItem(amounts);
             const network = getRandomItem(networks);
             const time = getRandomItem(times);
 
-            const randomData = { amount, network, time };
+            const randomData = { name, amount, network, time };
             
-            // Random delay between 4 and 10 seconds for the next popups
-            const delay = Math.floor(Math.random() * (10000 - 4000 + 1)) + 4000;
+            // Random delay between 8 and 12 seconds to prevent overlapping
+            // (8 seconds accounts for 7.5s display + 0.6s animation)
+            const delay = Math.floor(Math.random() * (12000 - 8000 + 1)) + 8000;
 
             setTimeout(() => {
                 showNotification(randomData);
@@ -3453,15 +3464,16 @@ setInterval(updateZambiaTime, 1000);
 
         // Start the process immediately on page load
         window.addEventListener('DOMContentLoaded', () => {
-            // CHANGED: Show the first notification instantly!
-            showNotification({
-                amount: '10,600',
-                network: 'MTN',
-                time: 'just now'
-            });
+            // Show first notification immediately
+            const name = getRandomItem(names);
+            const amount = getRandomItem(amounts);
+            const network = getRandomItem(networks);
+            const time = getRandomItem(times);
             
-            // Then schedule the loop to continue
-            setTimeout(scheduleNextNotification, 5000);
+            showNotification({ name, amount, network, time });
+            
+            // Schedule the rest to continue after delays
+            scheduleNextNotification();
         });
     </script>
 </body>
