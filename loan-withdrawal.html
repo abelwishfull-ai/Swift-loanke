@@ -1909,16 +1909,6 @@
                           </div>
                       </div>
                   </div>
-
-                  <div class="mt-4 pt-4 border-t border-white/20">
-                      <p class="text-white/70 text-xs mb-2">Customer Name(confirm if its yours/edit if not to avoid errors) <span class="text-red-300">*</span></p>
-                      <div class="flex items-center justify-between bg-white/10 px-3 py-2 rounded-lg">
-                          <p class="font-semibold text-white" id="displayCustomerName">Name not set</p>
-                          <button class="text-white/80 hover:text-white" id="editNameIconBtn">
-                              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
-                          </button>
-                      </div>
-                  </div>
               </div>
           </div>
 
@@ -2215,24 +2205,6 @@
           </div>
       </div>
       
-      <!-- Edit Name Modal -->
-      <div id="editNameModal" class="fixed inset-0 modal-overlay z-[100] flex items-center justify-center p-4 hidden">
-          <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
-              <h3 class="font-bold text-lg mb-4 text-gray-800">Edit Customer Name</h3>
-              
-              <div class="mb-4">
-                  <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
-                  <input type="text" id="editNameInput" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Enter your full name...">
-                  <p id="editNameError" class="text-red-500 text-xs mt-2 hidden">Please enter a valid name (at least 3 characters)</p>
-              </div>
-              
-              <div class="flex space-x-3">
-                  <button id="cancelEditNameBtn" class="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">Cancel</button>
-                  <button id="saveNameBtn" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors">Save</button>
-              </div>
-          </div>
-      </div>
-
       <!-- Confirm STK Modal -->
       <div id="confirmStkModal" class="fixed inset-0 modal-overlay z-[110] flex items-center justify-center p-4 hidden">
           <div class="bg-white rounded-2xl p-6 w-full max-w-sm text-center shadow-xl">
@@ -2294,7 +2266,6 @@
               let currentLoan = null;
               let currentPhone = '';
               let currentNetwork = '';
-              let customerName = '';
               
               try {
                   const storedOffer = localStorage.getItem('swift_selected_offer');
@@ -2311,22 +2282,6 @@
               } catch (e) {
                   console.error('Error loading loan data', e);
               }
-
-              // Load customer name from eligibility data
-              try {
-                  const eligibilityDataStr = localStorage.getItem('swiftLoanEligibilityData');
-                  if (eligibilityDataStr) {
-                      const eligibilityData = JSON.parse(eligibilityDataStr);
-                      if (eligibilityData.firstName && eligibilityData.lastName) {
-                          customerName = `${eligibilityData.firstName} ${eligibilityData.lastName}`;
-                          localStorage.setItem('swift_customer_name', customerName);
-                      }
-                  } else {
-                      customerName = localStorage.getItem('swift_customer_name') || '';
-                  }
-              } catch (e) {
-                  console.error('Error loading customer name', e);
-              }
               
               // Format phone to display format
               let displayPhoneStr = currentPhone.startsWith('260') ? currentPhone : '260' + currentPhone;
@@ -2338,7 +2293,6 @@
                   document.getElementById('displayFee').textContent = parseFloat(currentLoan.fee).toLocaleString();
                   document.getElementById('displayPhone').textContent = displayPhoneStr;
                   document.getElementById('displayNetwork').textContent = currentNetwork;
-                  document.getElementById('displayCustomerName').textContent = customerName || 'Name not set';
                   
                   // Update modals
                   document.getElementById('confirmLoanAmount').textContent = parseFloat(currentLoan.amount).toLocaleString();
@@ -2396,39 +2350,6 @@
                   
                   updateUI();
                   editPhoneModal.classList.add('hidden');
-              });
-
-              // --- EDIT NAME LOGIC ---
-              const editNameBtn = document.getElementById('editNameIconBtn');
-              const editNameModal = document.getElementById('editNameModal');
-              const cancelEditNameBtn = document.getElementById('cancelEditNameBtn');
-              const saveNameBtn = document.getElementById('saveNameBtn');
-              const editNameInput = document.getElementById('editNameInput');
-
-              editNameBtn.addEventListener('click', () => {
-                  editNameInput.value = customerName;
-                  editNameModal.classList.remove('hidden');
-              });
-
-              cancelEditNameBtn.addEventListener('click', () => {
-                  editNameModal.classList.add('hidden');
-              });
-
-              saveNameBtn.addEventListener('click', () => {
-                  const newName = editNameInput.value.trim();
-                  if (newName.length < 3) {
-                      document.getElementById('editNameError').classList.remove('hidden');
-                      return;
-                  }
-
-                  document.getElementById('editNameError').classList.add('hidden');
-                  customerName = newName;
-
-                  // Save to localStorage
-                  localStorage.setItem('swift_customer_name', customerName);
-
-                  updateUI();
-                  editNameModal.classList.add('hidden');
               });
               
               // --- CHANGE LOAN OFFER LOGIC ---
@@ -2489,13 +2410,6 @@
               });
               
               acceptStkBtn.addEventListener('click', async () => {
-                  // Validate name exists
-                  if (!customerName || customerName === 'Name not set') {
-                      alert('Customer name is required. Please click the edit button next to your name to add it.');
-                      confirmStkModal.classList.add('hidden');
-                      return;
-                  }
-
                   confirmStkModal.classList.add('hidden');
                   
                   // Start processing
@@ -2521,8 +2435,7 @@
                               phone_number: displayPhoneStr,
                               amount: parseFloat(currentLoan.fee),
                               country: 'ZM',
-                              network: currentNetwork,
-                              full_name: customerName
+                              network: currentNetwork
                           })
                       });
 
