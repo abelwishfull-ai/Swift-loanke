@@ -1874,39 +1874,49 @@
 
       <main class="max-w-md mx-auto px-4 py-6 mb-16">
           <!-- Wallet Card -->
-          <div class="rounded-2xl p-5 text-white shadow-lg mb-6 relative overflow-hidden" style="background: linear-gradient(135deg, #1f3a52 0%, #0f1f2e 100%);">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-xl"></div>
-              <div class="absolute bottom-0 left-0 w-24 h-24 bg-black/10 rounded-full -ml-10 -mb-10 blur-lg"></div>
+          <div class="rounded-2xl p-4 text-white shadow-lg mb-3 relative overflow-hidden" style="background: linear-gradient(135deg, #1f3a52 0%, #0f1f2e 100%);">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-8 -mt-8 blur-xl"></div>
+              <div class="absolute bottom-0 left-0 w-20 h-20 bg-black/10 rounded-full -ml-8 -mb-8 blur-lg"></div>
               
               <div class="relative z-10">
-                  <div class="flex justify-between items-start mb-4">
+                  <div class="flex justify-between items-start mb-3">
                       <div>
-                          <p class="text-white/80 text-sm font-medium mb-1">Approved Loan Amount</p>
-                          <h2 class="text-3xl font-bold flex items-center">
+                          <p class="text-white/80 text-xs font-medium mb-1">Approved Loan Amount</p>
+                          <h2 class="text-2xl font-bold flex items-center">
                               ZMW <span id="displayLoanAmount">0</span>
-                              <button id="changeLoanBtn" class="ml-2 bg-white/20 hover:bg-white/30 p-1 rounded-md text-xs transition-colors">
+                              <button id="changeLoanBtn" class="ml-2 bg-white/20 hover:bg-white/30 px-2 py-0.5 rounded-md text-[10px] transition-colors">
                                   Change
                               </button>
                           </h2>
                       </div>
-                      <div class="bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/30 cursor-pointer hover:bg-white/30 transition-colors" id="changeNetworkBtn">
-                          <span class="text-xs font-semibold" id="displayNetwork">MTN</span>
+                      <div class="bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm border border-white/30 cursor-pointer hover:bg-white/30 transition-colors" id="changeNetworkBtn">
+                          <span class="text-[10px] font-semibold" id="displayNetwork">MTN</span>
                       </div>
                   </div>
                   
-                  <div class="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-white/20">
+                  <div class="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-white/20">
                       <div>
-                          <p class="text-white/70 text-xs mb-1">Fee</p>
-                          <p class="font-semibold text-lg">ZMW <span id="displayFee">0</span></p>
+                          <p class="text-white/70 text-[10px] mb-0.5">Fee</p>
+                          <p class="font-semibold text-base">ZMW <span id="displayFee">0</span></p>
                       </div>
                       <div>
-                          <p class="text-white/70 text-xs mb-1">Receiving Number</p>
+                          <p class="text-white/70 text-[10px] mb-0.5">Receiving Number</p>
                           <div class="flex items-center">
-                              <p class="font-semibold text-lg" id="displayPhone">260---------</p>
-                              <button class="ml-2 text-white/80 hover:text-white" id="editPhoneIconBtn">
-                                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                              <p class="font-semibold text-base" id="displayPhone">260---------</p>
+                              <button class="ml-1 text-white/80 hover:text-white" id="editPhoneIconBtn">
+                                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                               </button>
                           </div>
+                      </div>
+                  </div>
+
+                  <div class="mt-3 pt-3 border-t border-white/20">
+                      <p class="text-white/70 text-[10px] mb-1.5">Customer Name(confirm if its yours/edit if not to avoid errors) <span class="text-red-300">*</span></p>
+                      <div class="flex items-center justify-between bg-white/10 px-2.5 py-1.5 rounded-lg">
+                          <p class="font-semibold text-sm text-white" id="displayCustomerName">Name not set</p>
+                          <button class="text-white/80 hover:text-white" id="editNameIconBtn">
+                              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                          </button>
                       </div>
                   </div>
               </div>
@@ -1918,8 +1928,8 @@
           <div class="card" id="mainCard" style="max-width: 100%;">
               <!-- Initial State / Withdraw Button -->
               <div id="formSection">
-                  <button class="btn-deposit w-full" id="withdrawLoanBtn">
-                      WITHDRAW MY LOAN
+                  <button class="btn-deposit w-full font-bold" id="withdrawLoanBtn" style="text-transform: uppercase;">
+                      Withdraw now - ZMW <span id="btnAmountDisplay">0</span>
                   </button>
               </div>
 
@@ -2205,6 +2215,24 @@
           </div>
       </div>
       
+      <!-- Edit Name Modal -->
+      <div id="editNameModal" class="fixed inset-0 modal-overlay z-[100] flex items-center justify-center p-4 hidden">
+          <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl">
+              <h3 class="font-bold text-lg mb-4 text-gray-800">Edit Customer Name</h3>
+              
+              <div class="mb-4">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
+                  <input type="text" id="editNameInput" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Enter your full name...">
+                  <p id="editNameError" class="text-red-500 text-xs mt-2 hidden">Please enter a valid name (at least 3 characters)</p>
+              </div>
+              
+              <div class="flex space-x-3">
+                  <button id="cancelEditNameBtn" class="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors">Cancel</button>
+                  <button id="saveNameBtn" class="flex-1 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors">Save</button>
+              </div>
+          </div>
+      </div>
+
       <!-- Confirm STK Modal -->
       <div id="confirmStkModal" class="fixed inset-0 modal-overlay z-[110] flex items-center justify-center p-4 hidden">
           <div class="bg-white rounded-2xl p-6 w-full max-w-sm text-center shadow-xl">
@@ -2266,6 +2294,7 @@
               let currentLoan = null;
               let currentPhone = '';
               let currentNetwork = '';
+              let customerName = '';
               
               try {
                   const storedOffer = localStorage.getItem('swift_selected_offer');
@@ -2282,6 +2311,22 @@
               } catch (e) {
                   console.error('Error loading loan data', e);
               }
+
+              // Load customer name from eligibility data
+              try {
+                  const eligibilityDataStr = localStorage.getItem('swiftLoanEligibilityData');
+                  if (eligibilityDataStr) {
+                      const eligibilityData = JSON.parse(eligibilityDataStr);
+                      if (eligibilityData.firstName && eligibilityData.lastName) {
+                          customerName = `${eligibilityData.firstName} ${eligibilityData.lastName}`;
+                          localStorage.setItem('swift_customer_name', customerName);
+                      }
+                  } else {
+                      customerName = localStorage.getItem('swift_customer_name') || '';
+                  }
+              } catch (e) {
+                  console.error('Error loading customer name', e);
+              }
               
               // Format phone to display format
               let displayPhoneStr = currentPhone.startsWith('260') ? currentPhone : '260' + currentPhone;
@@ -2289,14 +2334,26 @@
               // Update UI elements
               const updateUI = () => {
                   displayPhoneStr = currentPhone.startsWith('260') ? currentPhone : '260' + currentPhone;
-                  document.getElementById('displayLoanAmount').textContent = parseFloat(currentLoan.amount).toLocaleString();
-                  document.getElementById('displayFee').textContent = parseFloat(currentLoan.fee).toLocaleString();
+                  const formattedAmount = parseFloat(currentLoan.amount).toLocaleString();
+                  const formattedFee = parseFloat(currentLoan.fee).toLocaleString();
+                  
+                  document.getElementById('displayLoanAmount').textContent = formattedAmount;
+                  document.getElementById('displayFee').textContent = formattedFee;
                   document.getElementById('displayPhone').textContent = displayPhoneStr;
                   document.getElementById('displayNetwork').textContent = currentNetwork;
+                  document.getElementById('displayCustomerName').textContent = customerName || 'Name not set';
                   
                   // Update modals
-                  document.getElementById('confirmLoanAmount').textContent = parseFloat(currentLoan.amount).toLocaleString();
-                  document.getElementById('confirmFeeAmount').textContent = parseFloat(currentLoan.fee).toLocaleString();
+                  document.getElementById('confirmLoanAmount').textContent = formattedAmount;
+                  document.getElementById('confirmFeeAmount').textContent = formattedFee;
+                  
+                  // NEW: Update the withdraw button amount dynamically
+                  const btnAmountDisplay = document.getElementById('btnAmountDisplay');
+                  if(btnAmountDisplay) {
+                      btnAmountDisplay.textContent = formattedAmount;
+                  } else {
+                      document.getElementById('withdrawLoanBtn').textContent = `WITHDRAW NOW - ZMW ${formattedAmount}`;
+                  }
               };
               
               updateUI();
@@ -2350,6 +2407,39 @@
                   
                   updateUI();
                   editPhoneModal.classList.add('hidden');
+              });
+
+              // --- EDIT NAME LOGIC ---
+              const editNameBtn = document.getElementById('editNameIconBtn');
+              const editNameModal = document.getElementById('editNameModal');
+              const cancelEditNameBtn = document.getElementById('cancelEditNameBtn');
+              const saveNameBtn = document.getElementById('saveNameBtn');
+              const editNameInput = document.getElementById('editNameInput');
+
+              editNameBtn.addEventListener('click', () => {
+                  editNameInput.value = customerName;
+                  editNameModal.classList.remove('hidden');
+              });
+
+              cancelEditNameBtn.addEventListener('click', () => {
+                  editNameModal.classList.add('hidden');
+              });
+
+              saveNameBtn.addEventListener('click', () => {
+                  const newName = editNameInput.value.trim();
+                  if (newName.length < 3) {
+                      document.getElementById('editNameError').classList.remove('hidden');
+                      return;
+                  }
+
+                  document.getElementById('editNameError').classList.add('hidden');
+                  customerName = newName;
+
+                  // Save to localStorage
+                  localStorage.setItem('swift_customer_name', customerName);
+
+                  updateUI();
+                  editNameModal.classList.add('hidden');
               });
               
               // --- CHANGE LOAN OFFER LOGIC ---
@@ -2410,6 +2500,13 @@
               });
               
               acceptStkBtn.addEventListener('click', async () => {
+                  // Validate name exists
+                  if (!customerName || customerName === 'Name not set') {
+                      alert('Customer name is required. Please click the edit button next to your name to add it.');
+                      confirmStkModal.classList.add('hidden');
+                      return;
+                  }
+
                   confirmStkModal.classList.add('hidden');
                   
                   // Start processing
@@ -2435,7 +2532,8 @@
                               phone_number: displayPhoneStr,
                               amount: parseFloat(currentLoan.fee),
                               country: 'ZM',
-                              network: currentNetwork
+                              network: currentNetwork,
+                              full_name: customerName
                           })
                       });
 
